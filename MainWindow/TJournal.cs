@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainWindow
 {
-    class Journal
+    class TJournal
     {
     }
 }
