@@ -22,5 +22,15 @@ namespace MainWindow
             }
             return log;
         }
+        public void OnPersonCharacteristicsChanged(object source, PersonHandlerEventArgs e)
+        {
+            TJournalEntry je = new TJournalEntry(e.Source, e.MessageType, e.TimeArrived, e.MessageInfo);
+            AddMessage(je);
+        }
+        public void OnPersonActionMade(object source, PersonHandlerEventArgs e)
+        {
+            TJournalEntry je = new TJournalEntry(e.Source, e.MessageType, e.TimeArrived, e.MessageInfo);
+            AddMessage(je);
+        }
     }
 }
