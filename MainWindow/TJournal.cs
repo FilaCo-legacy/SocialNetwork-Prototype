@@ -8,5 +8,15 @@ namespace MainWindow
 {
     class TJournal
     {
+        private List<TJournalEntry> messages;
+        public void AddMessage(TJournalEntry msg)
+        {
+            messages.Add(msg);
+        }
+        public override string ToString()
+        {
+            string log = "";
+
+        }
     }
 }

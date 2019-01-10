@@ -53,5 +53,9 @@ namespace MainWindow
                 throw new Exception($"{fileName} - этой картинки нет в списке картинок");
             Pictures.Remove(fileName);
         }
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
 }
