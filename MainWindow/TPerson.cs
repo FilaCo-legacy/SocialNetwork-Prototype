@@ -97,30 +97,42 @@ namespace MainWindow
         {
             if (!Friends.Contains(_person))
                 throw new Exception($"{_person.FullName} отсутствует в списке друзей");
-            PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.FRIEND_ADDED, DateTime.Now,
+            PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.FRIEND_DELETED, DateTime.Now,
         $"Удалён друг {_person.FullName}");
             Friends.Remove(_person);
             OnPersonActionMade(this, _args);
         }
         public void AddNews(string txt)
         {
+            PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.NEWS_ADDED, DateTime.Now,
+                    $"Добавлена новая новость \"{txt}\"");
             News.Add(txt);
+            OnPersonActionMade(this, _args);
         }
         public void RemoveNews(string txt)
         {
             if (!News.Contains(txt))
                 throw new Exception($"{txt} - этой новости нет в списке новостей");
+            PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.NEWS_DELETED, DateTime.Now,
+                    $"Удалена новость \"{txt}\"");
             News.Remove(txt);
+            OnPersonActionMade(this, _args);
         }
         public void AddPicture(string fileName)
         {
+            PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.PICTURE_ADDED, DateTime.Now,
+        $"Добавлена новая картинка \"{fileName}\"");
             Pictures.Add(fileName);
+            OnPersonActionMade(this, _args);
         }
         public void RemovePicture(string fileName)
         {
             if (!Pictures.Contains(fileName))
                 throw new Exception($"{fileName} - этой картинки нет в списке картинок");
+            PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.PICTURE_DELETED, DateTime.Now,
+       $"Удалена картинка \"{fileName}\"");
             Pictures.Remove(fileName);
+            OnPersonActionMade(this, _args);
         }
         public override string ToString()
         {
