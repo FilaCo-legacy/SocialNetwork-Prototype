@@ -16,7 +16,11 @@ namespace MainWindow
         public override string ToString()
         {
             string log = "";
-
+            foreach (var cur in messages)
+            {
+                log += cur + "\n\n";
+            }
+            return log;
         }
     }
 }
