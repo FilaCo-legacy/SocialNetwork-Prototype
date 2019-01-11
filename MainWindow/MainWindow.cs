@@ -16,5 +16,18 @@ namespace MainWindow
         {
             InitializeComponent();
         }
+
+        private void toolExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolAddPerson_Click(object sender, EventArgs e)
+        {
+            if (addPerson.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
