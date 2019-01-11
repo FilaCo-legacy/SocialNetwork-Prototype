@@ -8,5 +8,6 @@ namespace MainWindow
 {
     class Adapter
     {
+        
     }
 }

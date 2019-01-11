@@ -26,7 +26,7 @@ namespace MainWindow
         {
             if (addPerson.ShowDialog() == DialogResult.OK)
             {
-
+                
             }
         }
     }

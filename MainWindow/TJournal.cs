@@ -13,6 +13,10 @@ namespace MainWindow
         {
             messages.Add(msg);
         }
+        public TJournal()
+        {
+            messages = new List<TJournalEntry>();
+        }
         public override string ToString()
         {
             string log = "";

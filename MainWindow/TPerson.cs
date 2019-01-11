@@ -84,6 +84,20 @@ namespace MainWindow
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
+        public TPerson(string _fullName, DateTime _dateOfBirth, TGender _gender, TStatus _maritalStatus, string _school, 
+            string _highSchool)
+        {
+            FullName = _fullName;
+            DateOfBirth = _dateOfBirth;
+            Gender = _gender;
+            MaritalStatus = _maritalStatus;
+            School = _school;
+            HighSchool = _highSchool;
+            updates = new TJournal();
+            Friends = new SortedSet<TPerson>();
+            News = new List<string>();
+            Pictures = new List<string>();
+        }
         public void AddFriend(TPerson _person)
         {
             if (Friends.Contains(_person))
