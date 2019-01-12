@@ -24,10 +24,9 @@ namespace MainWindow
 
         private void toolAddPerson_Click(object sender, EventArgs e)
         {
-            if (addPerson.ShowDialog() == DialogResult.OK)
-            {
-                
-            }
+            TPerson nAccount = addPerson.GetInfoNewAcc();
+            if (nAccount != null)
+                Adapter.AddAccount(nAccount);
         }
     }
 }

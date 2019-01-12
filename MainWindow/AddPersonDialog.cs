@@ -22,6 +22,22 @@ namespace MainWindow
             CorrectForm();
             MakeEmpty();
         }
+        internal TPerson GetInfoNewAcc()
+        {
+            if (ShowDialog() == DialogResult.OK)
+            {
+                string fullName = string.Format($"{textLastName.Text.Trim()} {textFirstName.Text.Trim()} " +
+                    $"{textMidName.Text.Trim()}");
+                TGender chosenGender = radioButMan.Checked ? TGender.MAN : TGender.WOMAN;
+                TStatus chosenStatus = (TStatus)listMaritalStatus.SelectedIndex;
+                string school = textSchool.Text.Trim();
+                string highSchool = textHighSchool.Text.Trim();
+                TPerson nPerson = new TPerson(fullName, chooseDateOfBirth.Value, chosenGender, chosenStatus, school,
+                    highSchool);
+                return nPerson;
+            }
+            return null;
+        }
         private void CorrectForm()
         {
             profilePicture.Location = new Point(30, 35);
@@ -46,6 +62,7 @@ namespace MainWindow
             chooseDateOfBirth.Value = chooseDateOfBirth.MaxDate;
             radioButMan.Checked = radioButWoman.Checked = false;
             isCorrectFirstName = isCorrectMidName = isCorrectLastName = isCorrectGender = false;
+            buttonCreate.Enabled = false;
         }
         private void buttonChoosePicture_Click(object sender, EventArgs e)
         {
@@ -68,24 +85,33 @@ namespace MainWindow
         {
             MakeEmpty();
         }
-
         private void textLastName_TextChanged(object sender, EventArgs e)
         {
-            textLastName.Text = ControlAddPersonDialog.CheckInputName(textLastName.Text);            
+            textLastName.Text = ControlAddPersonDialog.CheckInputName(textLastName.Text);
+
+            isCorrectLastName = ControlAddPersonDialog.CheckNameRegex(textLastName.Text);
+            buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
         }
 
         private void textFirstName_TextChanged(object sender, EventArgs e)
         {
             textFirstName.Text = ControlAddPersonDialog.CheckInputName(textFirstName.Text);
+
+            isCorrectFirstName = ControlAddPersonDialog.CheckNameRegex(textFirstName.Text);
+            buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
         }
 
         private void textMidName_TextChanged(object sender, EventArgs e)
         {
             textMidName.Text = ControlAddPersonDialog.CheckInputName(textMidName.Text);
+
+            isCorrectMidName = ControlAddPersonDialog.CheckNameRegex(textMidName.Text);
+            buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
         }
-        private void textLastName_Validating(object sender, CancelEventArgs e)
+
+        private void radioButMan_CheckedChanged(object sender, EventArgs e)
         {
-            
+            isCorrectGender = true;
         }
     }
 }

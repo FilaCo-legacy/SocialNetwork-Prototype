@@ -290,7 +290,6 @@
             this.textLastName.Size = new System.Drawing.Size(142, 20);
             this.textLastName.TabIndex = 8;
             this.textLastName.TextChanged += new System.EventHandler(this.textLastName_TextChanged);
-            this.textLastName.Validating += new System.ComponentModel.CancelEventHandler(this.textLastName_Validating);
             // 
             // panelGender
             // 
@@ -327,6 +326,7 @@
             this.radioButMan.TabStop = true;
             this.radioButMan.Text = "М";
             this.radioButMan.UseVisualStyleBackColor = true;
+            this.radioButMan.CheckedChanged += new System.EventHandler(this.radioButMan_CheckedChanged);
             // 
             // listMaritalStatus
             // 

@@ -8,6 +8,10 @@ namespace MainWindow
 {
     class Adapter
     {
-        
+        private static List<TPerson> accs;
+        public static void AddAccount(TPerson nAccount)
+        {
+            accs.Add(nAccount);
+        }
     }
 }
