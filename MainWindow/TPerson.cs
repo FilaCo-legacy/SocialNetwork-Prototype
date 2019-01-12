@@ -8,7 +8,7 @@ using System.Drawing;
 namespace MainWindow
 {
     enum TGender { MAN, WOMAN }
-    enum TStatus { NOT_CHOSEN, NOT_MARRIED, ENGAGED, MARRIED, IN_LOVE, COMPLICATED }
+    enum TStatus { NOT_CHOSEN, NOT_MARRIED, IN_RELATIONSHIP, ENGAGED, MARRIED, IN_LOVE, COMPLICATED }
     delegate void PersonHandler(object source, PersonHandlerEventArgs args);
     class TPerson
     {
