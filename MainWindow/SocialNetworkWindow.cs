@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainWindow
+namespace SocialNetwork
 {
-    public partial class MainWindow : Form
+    public partial class SocialNetworkWindow : Form
     {
-        public MainWindow()
+        public SocialNetworkWindow()
         {
             InitializeComponent();
+            addPerson = new AddPersonDialog();
         }
 
         private void toolExit_Click(object sender, EventArgs e)

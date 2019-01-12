@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainWindow
+namespace SocialNetwork
 {
     enum TMessage { FULLNAME_CHANGED, DATEOFBIRTH_CHANGED, GENDER_CHANGED, STATUS_CHANGED, SCHOOL_CHANGED, HIGHSCHOOL_CHANGED,
         FRIEND_ADDED, NEWS_ADDED, PICTURE_ADDED, FRIEND_DELETED, NEWS_DELETED, PICTURE_DELETED }

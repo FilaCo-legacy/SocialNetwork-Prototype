@@ -1,6 +1,6 @@
-﻿namespace MainWindow
+﻿namespace SocialNetwork
 {
-    partial class MainWindow
+    partial class SocialNetworkWindow
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,33 +29,37 @@
         private void InitializeComponent()
         {
             this.tabsNetwork = new System.Windows.Forms.TabControl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.actionTool = new System.Windows.Forms.ToolStripMenuItem();
             this.toolAddPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.addPerson = new AddPersonDialog();
-            this.menuStrip1.SuspendLayout();
+            this.tabExample = new System.Windows.Forms.TabPage();
+            this.mainInfo = new System.Windows.Forms.GroupBox();
+            this.tabsNetwork.SuspendLayout();
+            this.mainMenu.SuspendLayout();
+            this.tabExample.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabsNetwork
             // 
+            this.tabsNetwork.Controls.Add(this.tabExample);
             this.tabsNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabsNetwork.Location = new System.Drawing.Point(0, 24);
             this.tabsNetwork.Multiline = true;
             this.tabsNetwork.Name = "tabsNetwork";
             this.tabsNetwork.SelectedIndex = 0;
-            this.tabsNetwork.Size = new System.Drawing.Size(800, 426);
+            this.tabsNetwork.Size = new System.Drawing.Size(1264, 657);
             this.tabsNetwork.TabIndex = 1;
             // 
-            // menuStrip1
+            // mainMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actionTool});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(1264, 24);
+            this.mainMenu.TabIndex = 2;
+            this.mainMenu.Text = "menuStrip1";
             // 
             // actionTool
             // 
@@ -69,28 +73,49 @@
             // toolAddPerson
             // 
             this.toolAddPerson.Name = "toolAddPerson";
-            this.toolAddPerson.Size = new System.Drawing.Size(180, 22);
+            this.toolAddPerson.Size = new System.Drawing.Size(162, 22);
             this.toolAddPerson.Text = "Создать аккаунт";
             this.toolAddPerson.Click += new System.EventHandler(this.toolAddPerson_Click);
             // 
             // toolExit
             // 
             this.toolExit.Name = "toolExit";
-            this.toolExit.Size = new System.Drawing.Size(180, 22);
+            this.toolExit.Size = new System.Drawing.Size(162, 22);
             this.toolExit.Text = "Выход";
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
+            // 
+            // tabExample
+            // 
+            this.tabExample.Controls.Add(this.mainInfo);
+            this.tabExample.Location = new System.Drawing.Point(4, 22);
+            this.tabExample.Name = "tabExample";
+            this.tabExample.Size = new System.Drawing.Size(1256, 631);
+            this.tabExample.TabIndex = 0;
+            this.tabExample.Text = "ФИО";
+            this.tabExample.UseVisualStyleBackColor = true;
+            // 
+            // mainInfo
+            // 
+            this.mainInfo.Location = new System.Drawing.Point(8, 9);
+            this.mainInfo.Name = "mainInfo";
+            this.mainInfo.Size = new System.Drawing.Size(400, 300);
+            this.mainInfo.TabIndex = 0;
+            this.mainInfo.TabStop = false;
+            this.mainInfo.Text = "Основная информация";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tabsNetwork);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mainMenu);
             this.Name = "MainWindow";
             this.Text = "Kungur Social Network";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tabsNetwork.ResumeLayout(false);
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
+            this.tabExample.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,11 +124,13 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabsNetwork;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem actionTool;
         private System.Windows.Forms.ToolStripMenuItem toolAddPerson;
         private System.Windows.Forms.ToolStripMenuItem toolExit;
-        private AddPersonDialog addPerson; 
+        private AddPersonDialog addPerson;
+        private System.Windows.Forms.TabPage tabExample;
+        private System.Windows.Forms.GroupBox mainInfo;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿namespace MainWindow
+﻿namespace SocialNetwork
 {
     partial class AddPersonDialog
     {

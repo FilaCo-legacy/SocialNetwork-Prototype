@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainWindow
-{
+namespace SocialNetwork
+{ 
     static class Program
     {
         /// <summary>
@@ -16,7 +16,7 @@ namespace MainWindow
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new SocialNetworkWindow());
         }
     }
 }

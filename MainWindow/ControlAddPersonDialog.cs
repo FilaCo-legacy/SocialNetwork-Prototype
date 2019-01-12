@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Drawing;
 
-namespace MainWindow
+namespace SocialNetwork
 {
     class ControlAddPersonDialog
     {
