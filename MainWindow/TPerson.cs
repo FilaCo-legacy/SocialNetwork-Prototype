@@ -8,7 +8,7 @@ using System.Drawing;
 namespace SocialNetwork
 {
     enum TGender { MAN, WOMAN }
-    enum TStatus { NOT_CHOSEN, NOT_MARRIED, IN_RELATIONSHIP, ENGAGED, MARRIED, IN_LOVE, COMPLICATED }
+    enum TStatus { NOT_CHOSEN, NOT_MARRIED, IN_RELATIONSHIP, ENGAGED, MARRIED, IN_LOVE, COMPLICATED, IN_ACTIVE_SEARCH }
     delegate void PersonHandler(object source, PersonHandlerEventArgs args);
     class TPerson
     {
@@ -147,11 +147,6 @@ namespace SocialNetwork
        $"Удалена картинка \"{fileName}\"");
             Pictures.Remove(fileName);
             OnPersonActionMade(this, _args);
-        }
-        public override string ToString()
-        {
-            return string.Format($"ФИО: {FullName};\nДата рождения: {DateOfBirth};\nПол: {Gender};\nСемейное положение: " +
-                $"{MaritalStatus};\nШкола: {School};\nВуз: {HighSchool}.");
         }
         public void OnPersonCharacteristicsChanged(object source, PersonHandlerEventArgs args)
         {

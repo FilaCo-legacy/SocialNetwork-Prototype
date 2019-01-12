@@ -53,6 +53,7 @@
             this.radioButMan = new System.Windows.Forms.RadioButton();
             this.listMaritalStatus = new System.Windows.Forms.ComboBox();
             this.chooseDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.labelNotification = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.tableData.SuspendLayout();
             this.panelGender.SuspendLayout();
@@ -61,7 +62,7 @@
             // buttonCreate
             // 
             this.buttonCreate.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonCreate.Location = new System.Drawing.Point(316, 226);
+            this.buttonCreate.Location = new System.Drawing.Point(316, 276);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(75, 23);
             this.buttonCreate.TabIndex = 0;
@@ -71,7 +72,7 @@
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(397, 226);
+            this.buttonCancel.Location = new System.Drawing.Point(397, 276);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 1;
@@ -175,8 +176,8 @@
             this.labelHighSchool.Name = "labelHighSchool";
             this.labelHighSchool.Size = new System.Drawing.Size(120, 20);
             this.labelHighSchool.TabIndex = 15;
-            this.labelHighSchool.Text = "Вуз";
-            this.labelHighSchool.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelHighSchool.Text = "Вуз:";
+            this.labelHighSchool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textSchool
             // 
@@ -196,8 +197,8 @@
             this.labelSchool.Name = "labelSchool";
             this.labelSchool.Size = new System.Drawing.Size(120, 20);
             this.labelSchool.TabIndex = 13;
-            this.labelSchool.Text = "Школа";
-            this.labelSchool.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelSchool.Text = "Школа:";
+            this.labelSchool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textFirstName
             // 
@@ -218,8 +219,8 @@
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(120, 20);
             this.labelLastName.TabIndex = 2;
-            this.labelLastName.Text = "Фамилия*";
-            this.labelLastName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelLastName.Text = "Фамилия:*";
+            this.labelLastName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelFirstName
             // 
@@ -230,8 +231,8 @@
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(120, 20);
             this.labelFirstName.TabIndex = 3;
-            this.labelFirstName.Text = "Имя*";
-            this.labelFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelFirstName.Text = "Имя:*";
+            this.labelFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelMidName
             // 
@@ -242,8 +243,8 @@
             this.labelMidName.Name = "labelMidName";
             this.labelMidName.Size = new System.Drawing.Size(120, 20);
             this.labelMidName.TabIndex = 4;
-            this.labelMidName.Text = "Отчество*";
-            this.labelMidName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelMidName.Text = "Отчество:*";
+            this.labelMidName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelDateOfBirth
             // 
@@ -254,8 +255,8 @@
             this.labelDateOfBirth.Name = "labelDateOfBirth";
             this.labelDateOfBirth.Size = new System.Drawing.Size(120, 20);
             this.labelDateOfBirth.TabIndex = 5;
-            this.labelDateOfBirth.Text = "Дата рождения*";
-            this.labelDateOfBirth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDateOfBirth.Text = "Дата рождения:*";
+            this.labelDateOfBirth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelGender
             // 
@@ -266,8 +267,8 @@
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(120, 20);
             this.labelGender.TabIndex = 6;
-            this.labelGender.Text = "Пол*";
-            this.labelGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelGender.Text = "Пол:*";
+            this.labelGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelMaritalStatus
             // 
@@ -278,8 +279,8 @@
             this.labelMaritalStatus.Name = "labelMaritalStatus";
             this.labelMaritalStatus.Size = new System.Drawing.Size(120, 20);
             this.labelMaritalStatus.TabIndex = 7;
-            this.labelMaritalStatus.Text = "Семейное положение";
-            this.labelMaritalStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelMaritalStatus.Text = "Семейное положение:";
+            this.labelMaritalStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textLastName
             // 
@@ -340,7 +341,8 @@
             "Помолвлен",
             "Женат",
             "Влюблён",
-            "Всё сложно"});
+            "Всё сложно",
+            "В активном поиске"});
             this.listMaritalStatus.Location = new System.Drawing.Point(120, 100);
             this.listMaritalStatus.Margin = new System.Windows.Forms.Padding(0);
             this.listMaritalStatus.Name = "listMaritalStatus";
@@ -359,11 +361,21 @@
             this.chooseDateOfBirth.TabIndex = 20;
             this.chooseDateOfBirth.Value = new System.DateTime(2019, 1, 12, 0, 0, 0, 0);
             // 
+            // labelNotification
+            // 
+            this.labelNotification.AutoSize = true;
+            this.labelNotification.Location = new System.Drawing.Point(149, 225);
+            this.labelNotification.Name = "labelNotification";
+            this.labelNotification.Size = new System.Drawing.Size(323, 26);
+            this.labelNotification.TabIndex = 6;
+            this.labelNotification.Text = "Внимание!\r\nПоля, отмеченные звёздочкой, обязательны для заполнения.";
+            // 
             // AddPersonDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 261);
+            this.ClientSize = new System.Drawing.Size(484, 311);
+            this.Controls.Add(this.labelNotification);
             this.Controls.Add(this.tableData);
             this.Controls.Add(this.labelEmptyPic);
             this.Controls.Add(this.buttonChoosePicture);
@@ -414,5 +426,6 @@
         private System.Windows.Forms.TextBox textMidName;
         private System.Windows.Forms.ComboBox listMaritalStatus;
         private System.Windows.Forms.DateTimePicker chooseDateOfBirth;
+        private System.Windows.Forms.Label labelNotification;
     }
 }

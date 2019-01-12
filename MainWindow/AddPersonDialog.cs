@@ -112,6 +112,12 @@ namespace SocialNetwork
         private void radioButMan_CheckedChanged(object sender, EventArgs e)
         {
             isCorrectGender = true;
+            listMaritalStatus.Items.Clear();
+            if (radioButMan.Checked)
+                listMaritalStatus.Items.AddRange(Adapter.strMaritalStatusM);
+            else
+                listMaritalStatus.Items.AddRange(Adapter.strMaritalStatusW);
+            listMaritalStatus.SelectedIndex = 0;
         }
     }
 }

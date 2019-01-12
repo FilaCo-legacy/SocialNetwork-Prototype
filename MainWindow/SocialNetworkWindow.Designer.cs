@@ -29,15 +29,21 @@
         private void InitializeComponent()
         {
             this.tabsNetwork = new System.Windows.Forms.TabControl();
+            this.tabExample = new System.Windows.Forms.TabPage();
+            this.pictureProfile = new System.Windows.Forms.PictureBox();
+            this.mainInfo = new System.Windows.Forms.GroupBox();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.actionTool = new System.Windows.Forms.ToolStripMenuItem();
             this.toolAddPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabExample = new System.Windows.Forms.TabPage();
-            this.mainInfo = new System.Windows.Forms.GroupBox();
+            this.panelFriends = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelFriends = new System.Windows.Forms.Label();
+            this.textPersonInfo = new System.Windows.Forms.TextBox();
             this.tabsNetwork.SuspendLayout();
-            this.mainMenu.SuspendLayout();
             this.tabExample.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
+            this.mainInfo.SuspendLayout();
+            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabsNetwork
@@ -50,6 +56,39 @@
             this.tabsNetwork.SelectedIndex = 0;
             this.tabsNetwork.Size = new System.Drawing.Size(1264, 657);
             this.tabsNetwork.TabIndex = 1;
+            // 
+            // tabExample
+            // 
+            this.tabExample.Controls.Add(this.labelFriends);
+            this.tabExample.Controls.Add(this.panelFriends);
+            this.tabExample.Controls.Add(this.pictureProfile);
+            this.tabExample.Controls.Add(this.mainInfo);
+            this.tabExample.Location = new System.Drawing.Point(4, 22);
+            this.tabExample.Name = "tabExample";
+            this.tabExample.Size = new System.Drawing.Size(1256, 631);
+            this.tabExample.TabIndex = 0;
+            this.tabExample.Text = "ФИО";
+            this.tabExample.UseVisualStyleBackColor = true;
+            // 
+            // pictureProfile
+            // 
+            this.pictureProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureProfile.Image = global::SocialNetwork.Properties.Resources.EmptyProfilePic;
+            this.pictureProfile.Location = new System.Drawing.Point(22, 21);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(256, 256);
+            this.pictureProfile.TabIndex = 0;
+            this.pictureProfile.TabStop = false;
+            // 
+            // mainInfo
+            // 
+            this.mainInfo.Controls.Add(this.textPersonInfo);
+            this.mainInfo.Location = new System.Drawing.Point(289, 23);
+            this.mainInfo.Name = "mainInfo";
+            this.mainInfo.Size = new System.Drawing.Size(300, 256);
+            this.mainInfo.TabIndex = 0;
+            this.mainInfo.TabStop = false;
+            this.mainInfo.Text = "Основная информация";
             // 
             // mainMenu
             // 
@@ -84,38 +123,64 @@
             this.toolExit.Text = "Выход";
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
-            // tabExample
+            // panelFriends
             // 
-            this.tabExample.Controls.Add(this.mainInfo);
-            this.tabExample.Location = new System.Drawing.Point(4, 22);
-            this.tabExample.Name = "tabExample";
-            this.tabExample.Size = new System.Drawing.Size(1256, 631);
-            this.tabExample.TabIndex = 0;
-            this.tabExample.Text = "ФИО";
-            this.tabExample.UseVisualStyleBackColor = true;
+            this.panelFriends.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFriends.AutoScroll = true;
+            this.panelFriends.BackColor = System.Drawing.Color.LightGray;
+            this.panelFriends.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelFriends.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panelFriends.Location = new System.Drawing.Point(1036, 42);
+            this.panelFriends.Name = "panelFriends";
+            this.panelFriends.Size = new System.Drawing.Size(200, 571);
+            this.panelFriends.TabIndex = 1;
             // 
-            // mainInfo
+            // labelFriends
             // 
-            this.mainInfo.Location = new System.Drawing.Point(8, 9);
-            this.mainInfo.Name = "mainInfo";
-            this.mainInfo.Size = new System.Drawing.Size(400, 300);
-            this.mainInfo.TabIndex = 0;
-            this.mainInfo.TabStop = false;
-            this.mainInfo.Text = "Основная информация";
+            this.labelFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFriends.AutoSize = true;
+            this.labelFriends.Location = new System.Drawing.Point(1033, 21);
+            this.labelFriends.Name = "labelFriends";
+            this.labelFriends.Size = new System.Drawing.Size(45, 13);
+            this.labelFriends.TabIndex = 2;
+            this.labelFriends.Text = "Друзья";
             // 
-            // MainWindow
+            // textPersonInfo
+            // 
+            this.textPersonInfo.AcceptsReturn = true;
+            this.textPersonInfo.AcceptsTab = true;
+            this.textPersonInfo.BackColor = System.Drawing.Color.White;
+            this.textPersonInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPersonInfo.CausesValidation = false;
+            this.textPersonInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textPersonInfo.Location = new System.Drawing.Point(3, 16);
+            this.textPersonInfo.Multiline = true;
+            this.textPersonInfo.Name = "textPersonInfo";
+            this.textPersonInfo.ReadOnly = true;
+            this.textPersonInfo.Size = new System.Drawing.Size(294, 237);
+            this.textPersonInfo.TabIndex = 0;
+            this.textPersonInfo.TabStop = false;
+            this.textPersonInfo.Click += new System.EventHandler(this.textPersonInfo_Click);
+            // 
+            // SocialNetworkWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tabsNetwork);
             this.Controls.Add(this.mainMenu);
-            this.Name = "MainWindow";
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
+            this.Name = "SocialNetworkWindow";
             this.Text = "Kungur Social Network";
             this.tabsNetwork.ResumeLayout(false);
+            this.tabExample.ResumeLayout(false);
+            this.tabExample.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
+            this.mainInfo.ResumeLayout(false);
+            this.mainInfo.PerformLayout();
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
-            this.tabExample.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +196,10 @@
         private AddPersonDialog addPerson;
         private System.Windows.Forms.TabPage tabExample;
         private System.Windows.Forms.GroupBox mainInfo;
+        private System.Windows.Forms.PictureBox pictureProfile;
+        private System.Windows.Forms.Label labelFriends;
+        private System.Windows.Forms.FlowLayoutPanel panelFriends;
+        private System.Windows.Forms.TextBox textPersonInfo;
     }
 }
 
