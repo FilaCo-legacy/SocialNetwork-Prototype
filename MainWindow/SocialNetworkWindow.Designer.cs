@@ -38,12 +38,13 @@
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.labelFriends = new System.Windows.Forms.Label();
-            this.textPersonInfo = new System.Windows.Forms.TextBox();
+            this.dataViewPerson = new System.Windows.Forms.DataGridView();
             this.tabsNetwork.SuspendLayout();
             this.tabExample.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.mainInfo.SuspendLayout();
             this.mainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewPerson)).BeginInit();
             this.SuspendLayout();
             // 
             // tabsNetwork
@@ -82,7 +83,7 @@
             // 
             // mainInfo
             // 
-            this.mainInfo.Controls.Add(this.textPersonInfo);
+            this.mainInfo.Controls.Add(this.dataViewPerson);
             this.mainInfo.Location = new System.Drawing.Point(289, 23);
             this.mainInfo.Name = "mainInfo";
             this.mainInfo.Size = new System.Drawing.Size(300, 256);
@@ -146,22 +147,26 @@
             this.labelFriends.TabIndex = 2;
             this.labelFriends.Text = "Друзья";
             // 
-            // textPersonInfo
+            // dataViewPerson
             // 
-            this.textPersonInfo.AcceptsReturn = true;
-            this.textPersonInfo.AcceptsTab = true;
-            this.textPersonInfo.BackColor = System.Drawing.Color.White;
-            this.textPersonInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPersonInfo.CausesValidation = false;
-            this.textPersonInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textPersonInfo.Location = new System.Drawing.Point(3, 16);
-            this.textPersonInfo.Multiline = true;
-            this.textPersonInfo.Name = "textPersonInfo";
-            this.textPersonInfo.ReadOnly = true;
-            this.textPersonInfo.Size = new System.Drawing.Size(294, 237);
-            this.textPersonInfo.TabIndex = 0;
-            this.textPersonInfo.TabStop = false;
-            this.textPersonInfo.Click += new System.EventHandler(this.textPersonInfo_Click);
+            this.dataViewPerson.AllowUserToAddRows = false;
+            this.dataViewPerson.AllowUserToDeleteRows = false;
+            this.dataViewPerson.AllowUserToResizeColumns = false;
+            this.dataViewPerson.AllowUserToResizeRows = false;
+            this.dataViewPerson.BackgroundColor = System.Drawing.Color.White;
+            this.dataViewPerson.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataViewPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewPerson.ColumnHeadersVisible = false;
+            this.dataViewPerson.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataViewPerson.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataViewPerson.EnableHeadersVisualStyles = false;
+            this.dataViewPerson.Location = new System.Drawing.Point(3, 16);
+            this.dataViewPerson.Name = "dataViewPerson";
+            this.dataViewPerson.ReadOnly = true;
+            this.dataViewPerson.RowHeadersVisible = false;
+            this.dataViewPerson.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataViewPerson.Size = new System.Drawing.Size(294, 237);
+            this.dataViewPerson.TabIndex = 0;
             // 
             // SocialNetworkWindow
             // 
@@ -178,9 +183,9 @@
             this.tabExample.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.mainInfo.ResumeLayout(false);
-            this.mainInfo.PerformLayout();
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewPerson)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +204,7 @@
         private System.Windows.Forms.PictureBox pictureProfile;
         private System.Windows.Forms.Label labelFriends;
         private System.Windows.Forms.FlowLayoutPanel panelFriends;
-        private System.Windows.Forms.TextBox textPersonInfo;
+        private System.Windows.Forms.DataGridView dataViewPerson;
     }
 }
 

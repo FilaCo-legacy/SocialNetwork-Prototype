@@ -13,6 +13,12 @@ namespace SocialNetwork
     class TPerson
     {
         private TJournal updates;
+        private string fullName;
+        private DateTime dateOfBirth;
+        private TGender gender;
+        private TStatus maritalStatus;
+        private string school;
+        private string highSchool;
         public event PersonHandler PersonCharacteristicsChanged;
         public event PersonHandler PersonActionMade;
         public SortedSet<TPerson> Friends;
@@ -20,67 +26,67 @@ namespace SocialNetwork
         public List<string> Pictures;
         public string FullName
         {
-            get { return FullName; }
+            get { return fullName; }
             set
             {
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.FULLNAME_CHANGED, DateTime.Now,
                     $"Имя изменено на {value}");
-                FullName = value;
+                fullName = value;
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
         public DateTime DateOfBirth
         {
-            get { return DateOfBirth; }
+            get { return dateOfBirth; }
             set
             {
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.DATEOFBIRTH_CHANGED, DateTime.Now,
                     $"Дата рождения изменена на {value}");
-                DateOfBirth = value;
+                dateOfBirth = value;
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
         public TGender Gender
         {
-            get { return Gender; }
+            get { return gender; }
             set
             {
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.GENDER_CHANGED, DateTime.Now,
                     $"Пол изменен на {value}");
-                Gender = value;
+                gender = value;
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
         public TStatus MaritalStatus
         {
-            get { return MaritalStatus; }
+            get { return maritalStatus; }
             set
             {
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.STATUS_CHANGED, DateTime.Now,
                     $"Семейное положение изменено на {value}");
-                MaritalStatus = value;
+                maritalStatus = value;
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
         public string School
         {
-            get { return School; }
+            get { return school; }
             set
             {
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.SCHOOL_CHANGED, DateTime.Now,
                     $"Школа изменена на {value}");
-                School = value;
+                school = value;
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
         public string HighSchool
         {
-            get { return HighSchool; }
+            get { return highSchool; }
             set
             {
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.HIGHSCHOOL_CHANGED, DateTime.Now,
                     $"Вуз изменен на {value}");
-                HighSchool = value;
+                highSchool = value;
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
