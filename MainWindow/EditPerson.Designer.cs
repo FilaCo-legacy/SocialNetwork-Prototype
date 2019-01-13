@@ -1,6 +1,6 @@
 ﻿namespace SocialNetwork
 {
-    partial class AddPerson
+    partial class EditPerson
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(75, 23);
             this.buttonCreate.TabIndex = 0;
-            this.buttonCreate.Text = "Создать";
+            this.buttonCreate.Text = "Изменить";
             this.buttonCreate.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
@@ -379,7 +379,7 @@
             this.profilePicture.TabIndex = 2;
             this.profilePicture.TabStop = false;
             // 
-            // AddPerson
+            // EditPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -393,10 +393,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddPerson";
+            this.Name = "EditPerson";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.ShowInTaskbar = false;
-            this.Text = "Создать аккаунт";
+            this.Text = "Изменить данные";
             this.tableData.ResumeLayout(false);
             this.tableData.PerformLayout();
             this.panelGender.ResumeLayout(false);

@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace SocialNetwork
 {
-    public partial class AddPerson : Form
+    public partial class EditPerson : Form
     {
         private bool isCorrectFirstName;
         private bool isCorrectMidName;
         private bool isCorrectLastName;
         private bool isCorrectGender;
-        public AddPerson()
+        internal EditPerson()
         {
             InitializeComponent();
-            MakeEmpty();
         }
-        internal AccountInfo GetInfoNewAcc()
+        internal AccountInfo GetInfoNewAcc(AccountInfo _curData)
         {
-            MakeEmpty();           
+            FillFields(_curData);           
             if (ShowDialog() == DialogResult.OK)
             {
                 string fullName = string.Format($"{textLastName.Text.Trim()} {textFirstName.Text.Trim()} " +
@@ -39,21 +38,32 @@ namespace SocialNetwork
             }
             return null;
         }
-        private void MakeEmpty()
+        private void FillFields(AccountInfo _curData)
         {
-            profilePicture.Image = null;
-            foreach(var cur in tableData.Controls)
+            try
             {
-                if (cur as TextBox != null)
-                {
-                    (cur as TextBox).Text = "";
-                }
+                Bitmap bmp;
+                ControlActPerson.LoadPic(_curData.ProfilePic, out bmp);
+                profilePicture.Image = bmp;
             }
-            listMaritalStatus.SelectedIndex = 0;
-            chooseDateOfBirth.Value = chooseDateOfBirth.MaxDate;
-            radioButMan.Checked = radioButWoman.Checked = false;
-            isCorrectFirstName = isCorrectMidName = isCorrectLastName = isCorrectGender = false;
-            buttonCreate.Enabled = false;
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            string[] splittedFullName = _curData.PersonData.FullName.Split(' ');
+            textLastName.Text = splittedFullName[0];
+            textFirstName.Text = splittedFullName[1];
+            textMidName.Text = splittedFullName[2];
+            listMaritalStatus.SelectedIndex = (int)_curData.PersonData.MaritalStatus;
+            chooseDateOfBirth.Value = _curData.PersonData.DateOfBirth;
+            if (_curData.PersonData.Gender == TGender.MAN)
+                radioButMan.Checked = true;
+            else
+                radioButWoman.Checked = true;
+            isCorrectFirstName = isCorrectMidName = isCorrectLastName = isCorrectGender = true;
+            buttonCreate.Enabled = true;
+            textSchool.Text = _curData.PersonData.School;
+            textHighSchool.Text = _curData.PersonData.HighSchool;
         }
         private void buttonChoosePicture_Click(object sender, EventArgs e)
         {

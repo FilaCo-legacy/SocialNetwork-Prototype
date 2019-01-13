@@ -12,8 +12,8 @@ namespace SocialNetwork
     class ControlActPerson
     {
         private static Regex regExpNames = new Regex(@"^([А-Я][а-я]{1,30}|[A-Z][a-z]{1,30})$");
-        private static Size PIC_SIZE = new Size(128, 128);
-        public static void AddProfilePic(string path, out Bitmap bmp)
+        private static Size PIC_SIZE = new Size(100, 100);
+        public static void LoadPic(string path, out Bitmap bmp)
         {
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
