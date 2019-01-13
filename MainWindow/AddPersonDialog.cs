@@ -22,8 +22,9 @@ namespace SocialNetwork
             CorrectForm();
             MakeEmpty();
         }
-        internal TPerson GetInfoNewAcc()
+        internal AccountInfo GetInfoNewAcc()
         {
+            MakeEmpty();
             if (ShowDialog() == DialogResult.OK)
             {
                 string fullName = string.Format($"{textLastName.Text.Trim()} {textFirstName.Text.Trim()} " +
@@ -34,7 +35,8 @@ namespace SocialNetwork
                 string highSchool = textHighSchool.Text.Trim();
                 TPerson nPerson = new TPerson(fullName, chooseDateOfBirth.Value, chosenGender, chosenStatus, school,
                     highSchool);
-                return nPerson;
+                AccountInfo nAccount = new AccountInfo(nPerson, choosePicDialog.FileName);
+                return nAccount;
             }
             return null;
         }
@@ -81,10 +83,6 @@ namespace SocialNetwork
                 }
             }
         }
-        private void AddPersonDialog_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            MakeEmpty();
-        }
         private void textLastName_TextChanged(object sender, EventArgs e)
         {
             textLastName.Text = ControlAddPersonDialog.CheckInputName(textLastName.Text);
@@ -110,6 +108,19 @@ namespace SocialNetwork
         }
 
         private void radioButMan_CheckedChanged(object sender, EventArgs e)
+        {
+            isCorrectGender = true;
+            int ind = listMaritalStatus.SelectedIndex;
+            listMaritalStatus.Items.Clear();
+            if (radioButMan.Checked)
+                listMaritalStatus.Items.AddRange(Adapter.strMaritalStatusM);
+            else
+                listMaritalStatus.Items.AddRange(Adapter.strMaritalStatusW);
+            listMaritalStatus.SelectedIndex = ind;
+            buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
+        }
+
+        private void radioButWoman_CheckedChanged(object sender, EventArgs e)
         {
             isCorrectGender = true;
             int ind = listMaritalStatus.SelectedIndex;

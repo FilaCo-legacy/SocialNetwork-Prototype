@@ -314,6 +314,7 @@
             this.radioButWoman.TabStop = true;
             this.radioButWoman.Text = "Ж";
             this.radioButWoman.UseVisualStyleBackColor = true;
+            this.radioButWoman.CheckedChanged += new System.EventHandler(this.radioButWoman_CheckedChanged);
             // 
             // radioButMan
             // 
@@ -388,7 +389,6 @@
             this.Name = "AddPersonDialog";
             this.ShowInTaskbar = false;
             this.Text = "Создать аккаунт";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddPersonDialog_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.tableData.ResumeLayout(false);
             this.tableData.PerformLayout();

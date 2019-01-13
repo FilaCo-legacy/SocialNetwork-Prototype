@@ -27,23 +27,31 @@ namespace SocialNetwork
             tab.Columns.AddRange(new DataColumn[] { field, value });
             DataRow rowDateOfBirth = tab.NewRow();
             DataRow rowGender = tab.NewRow();
-            DataRow rowMaritalStatus = tab.NewRow();
+            rowDateOfBirth.ItemArray = new object[] { "Дата рождения:", source.DateOfBirth.ToLongDateString() };
+            rowGender.ItemArray = new object[] { "Пол:", strGender[(int)source.Gender] };
+            tab.Rows.Add(rowDateOfBirth);
+            tab.Rows.Add(rowGender);
+            if (source.MaritalStatus != TStatus.NOT_CHOSEN)
+            {
+                DataRow rowMaritalStatus = tab.NewRow();
+                if (source.Gender == TGender.MAN)
+                    rowMaritalStatus.ItemArray = new object[] { "Семейное положение:", strMaritalStatusM[(int)source.MaritalStatus] };
+                else
+                    rowMaritalStatus.ItemArray = new object[] { "Семейное положение:", strMaritalStatusW[(int)source.MaritalStatus] };
+                tab.Rows.Add(rowMaritalStatus);
+            }            
             if (source.School != "")
             {
                 DataRow rowSchool = tab.NewRow();
-                rowSchool.ItemArray = new object[] { "Школа", source.School };
+                rowSchool.ItemArray = new object[] { "Школа:", source.School };
+                tab.Rows.Add(rowSchool);
             }
             if (source.HighSchool != "")
             {
                 DataRow rowHighSchool = tab.NewRow();
-                rowHighSchool.ItemArray = new object[] { "Вуз", source.HighSchool };
+                rowHighSchool.ItemArray = new object[] { "Вуз:", source.HighSchool };
+                tab.Rows.Add(rowHighSchool);
             }
-            rowDateOfBirth.ItemArray = new object[] { "Дата рождения", source.DateOfBirth.ToLongDateString() };
-            rowGender.ItemArray = new object[] { "Пол", strGender[(int)source.Gender] };
-            if (source.Gender == TGender.MAN)
-                rowMaritalStatus.ItemArray = new object[] { "Семейное положение", strMaritalStatusM[(int)source.MaritalStatus] };
-            else
-                rowMaritalStatus.ItemArray = new object[] { "Семейное положение", strMaritalStatusW[(int)source.MaritalStatus] };
             return tab;
         }
     }

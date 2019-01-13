@@ -26,11 +26,11 @@ namespace SocialNetwork
 
         private void toolAddPerson_Click(object sender, EventArgs e)
         {
-            TPerson nAccount = addPerson.GetInfoNewAcc();
+            AccountInfo nAccount = addPerson.GetInfoNewAcc();
             if (nAccount != null)
             {
-                Adapter.AddAccount(nAccount);
-                dataViewPerson.DataSource = Adapter.InfoPerson(nAccount);
+                Adapter.AddAccount(nAccount.PersonData);
+
             }
         }
     }
