@@ -16,7 +16,7 @@ namespace SocialNetwork
         {
             InitializeComponent();
             addPerson = new AddPerson();
-            
+            //editPerson = new EditPerson();
         }
 
         private void toolExit_Click(object sender, EventArgs e)
@@ -29,8 +29,11 @@ namespace SocialNetwork
             AccountInfo nAccount = addPerson.GetInfoNewAcc();
             if (nAccount != null)
             {
-                Adapter.AddAccount(nAccount.PersonData);
-
+                Adapter.AddAccount(nAccount);
+                tabsNetwork.TabPages.Add(nAccount.PersonData.FullName);
+                NetworkPage np = new NetworkPage(nAccount);
+                np.Dock = DockStyle.Fill;
+                tabsNetwork.TabPages[tabsNetwork.TabPages.Count - 1].Controls.Add(np);
             }
         }
     }

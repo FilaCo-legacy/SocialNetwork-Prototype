@@ -9,13 +9,12 @@ namespace SocialNetwork
     internal class AccountInfo
     {
         private TPerson personData;
-        private string profilePic;
         public TPerson PersonData { get { return personData; } }
-        public string ProfilePic { get { return profilePic; } }
+        public string ProfilePic { get; set; }
         public AccountInfo(TPerson _personData, string _profilePic)
         {
             personData = _personData;
-            profilePic = _profilePic;
+            ProfilePic = _profilePic;
         }
     }
 }

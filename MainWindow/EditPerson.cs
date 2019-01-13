@@ -20,31 +20,36 @@ namespace SocialNetwork
         {
             InitializeComponent();
         }
-        internal AccountInfo GetInfoNewAcc(AccountInfo _curData)
+        internal void EditAcc(ref AccountInfo curData)
         {
-            FillFields(_curData);           
+            FillFields(curData);
             if (ShowDialog() == DialogResult.OK)
             {
                 string fullName = string.Format($"{textLastName.Text.Trim()} {textFirstName.Text.Trim()} " +
                     $"{textMidName.Text.Trim()}");
+                if (fullName != curData.PersonData.FullName)
+                    curData.PersonData.FullName = fullName;
                 TGender chosenGender = radioButMan.Checked ? TGender.MAN : TGender.WOMAN;
+                if (chosenGender != curData.PersonData.Gender)
+                    curData.PersonData.Gender = chosenGender;
                 TStatus chosenStatus = (TStatus)listMaritalStatus.SelectedIndex;
+                if (chosenStatus != curData.PersonData.MaritalStatus)
+                    curData.PersonData.MaritalStatus = chosenStatus;
                 string school = textSchool.Text.Trim();
+                if (school != curData.PersonData.School)
+                    curData.PersonData.School = school;
                 string highSchool = textHighSchool.Text.Trim();
-                TPerson nPerson = new TPerson(fullName, chooseDateOfBirth.Value, chosenGender, chosenStatus, school,
-                    highSchool);
-                AccountInfo nAccount = new AccountInfo(nPerson, choosePicDialog.FileName);
-                return nAccount;
+                if (highSchool != curData.PersonData.HighSchool)
+                    curData.PersonData.HighSchool = highSchool;
+                if (choosePicDialog.FileName != "")
+                    curData.ProfilePic = choosePicDialog.FileName;
             }
-            return null;
         }
         private void FillFields(AccountInfo _curData)
         {
             try
             {
-                Bitmap bmp;
-                ControlActPerson.LoadPic(_curData.ProfilePic, out bmp);
-                profilePicture.Image = bmp;
+                profilePicture.Image = ControlActPerson.LoadPic(choosePicDialog.FileName, profilePicture.Size);
             }
             catch (Exception e)
             {
@@ -71,9 +76,7 @@ namespace SocialNetwork
             {
                 try
                 {
-                    Bitmap bmp;
-                    ControlActPerson.LoadPic(choosePicDialog.FileName, out bmp);
-                    profilePicture.Image = bmp;
+                    profilePicture.Image = ControlActPerson.LoadPic(choosePicDialog.FileName, profilePicture.Size);
                 }
                 catch (Exception exc)
                 {

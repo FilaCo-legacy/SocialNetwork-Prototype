@@ -61,9 +61,7 @@ namespace SocialNetwork
             {
                 try
                 {
-                    Bitmap bmp;
-                    ControlActPerson.LoadPic(choosePicDialog.FileName, out bmp);
-                    profilePicture.Image = bmp;
+                    profilePicture.Image = ControlActPerson.LoadPic(choosePicDialog.FileName,profilePicture.Size);
                 }
                 catch (Exception exc)
                 {

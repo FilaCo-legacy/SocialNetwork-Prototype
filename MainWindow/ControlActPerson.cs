@@ -13,13 +13,18 @@ namespace SocialNetwork
     {
         private static Regex regExpNames = new Regex(@"^([А-Я][а-я]{1,30}|[A-Z][a-z]{1,30})$");
         private static Size PIC_SIZE = new Size(100, 100);
-        public static void LoadPic(string path, out Bitmap bmp)
+        public static Bitmap LoadPic(string path, Size destSize)
         {
-            using (FileStream fs = new FileStream(path, FileMode.Open))
+            Bitmap bmp = null;
+            if (path != "")
             {
-                bmp = new Bitmap(fs);
-                bmp = new Bitmap(bmp, PIC_SIZE);
+                using (FileStream fs = new FileStream(path, FileMode.Open))
+                {
+                    bmp = new Bitmap(fs);
+                    bmp = new Bitmap(bmp, destSize);
+                }
             }
+            return bmp;
         }
         public static bool CheckNameRegex(string txt)
         {
