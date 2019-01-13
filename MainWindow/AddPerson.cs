@@ -10,21 +10,20 @@ using System.Windows.Forms;
 
 namespace SocialNetwork
 {
-    public partial class AddPersonDialog : Form
+    public partial class AddPerson : Form
     {
         private bool isCorrectFirstName;
         private bool isCorrectMidName;
         private bool isCorrectLastName;
         private bool isCorrectGender;
-        public AddPersonDialog()
+        public AddPerson()
         {
             InitializeComponent();
-            CorrectForm();
             MakeEmpty();
         }
         internal AccountInfo GetInfoNewAcc()
         {
-            MakeEmpty();
+            MakeEmpty();           
             if (ShowDialog() == DialogResult.OK)
             {
                 string fullName = string.Format($"{textLastName.Text.Trim()} {textFirstName.Text.Trim()} " +
@@ -40,19 +39,9 @@ namespace SocialNetwork
             }
             return null;
         }
-        private void CorrectForm()
-        {
-            profilePicture.Location = new Point(30, 35);
-            buttonChoosePicture.Location = new Point(profilePicture.Location.X + (profilePicture.Width -
-                buttonChoosePicture.Width) / 2, buttonChoosePicture.Location.Y);
-            labelEmptyPic.Location = new Point(profilePicture.Location.X + (profilePicture.Width -
-                labelEmptyPic.Width) / 2, profilePicture.Location.Y + (profilePicture.Height -
-                labelEmptyPic.Height) / 2);
-        }
         private void MakeEmpty()
         {
             profilePicture.Image = null;
-            labelEmptyPic.Show();
             foreach(var cur in tableData.Controls)
             {
                 if (cur as TextBox != null)
@@ -73,9 +62,8 @@ namespace SocialNetwork
                 try
                 {
                     Bitmap bmp;
-                    ControlAddPersonDialog.AddProfilePic(choosePicDialog.FileName, out bmp);
+                    ControlActPerson.AddProfilePic(choosePicDialog.FileName, out bmp);
                     profilePicture.Image = bmp;
-                    labelEmptyPic.Hide();
                 }
                 catch (Exception exc)
                 {
@@ -85,25 +73,25 @@ namespace SocialNetwork
         }
         private void textLastName_TextChanged(object sender, EventArgs e)
         {
-            textLastName.Text = ControlAddPersonDialog.CheckInputName(textLastName.Text);
+            textLastName.Text = ControlActPerson.CheckInputName(textLastName.Text);
 
-            isCorrectLastName = ControlAddPersonDialog.CheckNameRegex(textLastName.Text);
+            isCorrectLastName = ControlActPerson.CheckNameRegex(textLastName.Text);
             buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
         }
 
         private void textFirstName_TextChanged(object sender, EventArgs e)
         {
-            textFirstName.Text = ControlAddPersonDialog.CheckInputName(textFirstName.Text);
+            textFirstName.Text = ControlActPerson.CheckInputName(textFirstName.Text);
 
-            isCorrectFirstName = ControlAddPersonDialog.CheckNameRegex(textFirstName.Text);
+            isCorrectFirstName = ControlActPerson.CheckNameRegex(textFirstName.Text);
             buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
         }
 
         private void textMidName_TextChanged(object sender, EventArgs e)
         {
-            textMidName.Text = ControlAddPersonDialog.CheckInputName(textMidName.Text);
+            textMidName.Text = ControlActPerson.CheckInputName(textMidName.Text);
 
-            isCorrectMidName = ControlAddPersonDialog.CheckNameRegex(textMidName.Text);
+            isCorrectMidName = ControlActPerson.CheckNameRegex(textMidName.Text);
             buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
         }
 

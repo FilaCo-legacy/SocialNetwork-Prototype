@@ -15,7 +15,7 @@ namespace SocialNetwork
         public SocialNetworkWindow()
         {
             InitializeComponent();
-            addPerson = new AddPersonDialog();
+            addPerson = new AddPerson();
             
         }
 

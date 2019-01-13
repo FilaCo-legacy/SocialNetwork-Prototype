@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace SocialNetwork
 {
-    class ControlAddPersonDialog
+    class ControlActPerson
     {
         private static Regex regExpNames = new Regex(@"^([А-Я][а-я]{1,30}|[A-Z][a-z]{1,30})$");
         private static Size PIC_SIZE = new Size(128, 128);

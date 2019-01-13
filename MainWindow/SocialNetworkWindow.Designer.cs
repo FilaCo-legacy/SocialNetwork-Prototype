@@ -116,7 +116,7 @@
         private System.Windows.Forms.ToolStripMenuItem actionTool;
         private System.Windows.Forms.ToolStripMenuItem toolAddPerson;
         private System.Windows.Forms.ToolStripMenuItem toolExit;
-        private AddPersonDialog addPerson;
+        private AddPerson addPerson;
         private System.Windows.Forms.TabPage tabExample;
     }
 }

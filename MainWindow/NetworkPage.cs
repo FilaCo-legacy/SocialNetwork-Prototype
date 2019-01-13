@@ -16,5 +16,10 @@ namespace SocialNetwork
         {
             InitializeComponent();
         }
+
+        private void butEditInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

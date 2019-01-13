@@ -1,6 +1,6 @@
 ﻿namespace SocialNetwork
 {
-    partial class AddPersonDialog
+    partial class EditPersonInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.buttonChoosePicture = new System.Windows.Forms.Button();
@@ -59,15 +59,15 @@
             this.panelGender.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonCreate
+            // buttonEdit
             // 
-            this.buttonCreate.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonCreate.Location = new System.Drawing.Point(316, 276);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
-            this.buttonCreate.TabIndex = 0;
-            this.buttonCreate.Text = "Создать";
-            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonEdit.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonEdit.Location = new System.Drawing.Point(316, 276);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonEdit.TabIndex = 0;
+            this.buttonEdit.Text = "Изменить";
+            this.buttonEdit.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
             // 
@@ -371,7 +371,7 @@
             this.labelNotification.TabIndex = 6;
             this.labelNotification.Text = "Внимание!\r\nПоля, отмеченные звёздочкой, обязательны для заполнения.";
             // 
-            // AddPersonDialog
+            // EditPersonInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -382,11 +382,11 @@
             this.Controls.Add(this.buttonChoosePicture);
             this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonCreate);
+            this.Controls.Add(this.buttonEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddPersonDialog";
+            this.Name = "EditPersonInfo";
             this.ShowInTaskbar = false;
             this.Text = "Создать аккаунт";
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
@@ -401,7 +401,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.PictureBox profilePicture;
         private System.Windows.Forms.Button buttonChoosePicture;
