@@ -98,7 +98,7 @@
             // 
             // tableData
             // 
-            this.tableData.BackColor = System.Drawing.Color.White;
+            this.tableData.BackColor = System.Drawing.Color.AliceBlue;
             this.tableData.ColumnCount = 2;
             this.tableData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -358,7 +358,7 @@
             // 
             // panelProfilePic
             // 
-            this.panelProfilePic.BackColor = System.Drawing.Color.White;
+            this.panelProfilePic.BackColor = System.Drawing.Color.AliceBlue;
             this.panelProfilePic.Controls.Add(this.buttonChoosePicture);
             this.panelProfilePic.Controls.Add(this.profilePicture);
             this.panelProfilePic.Location = new System.Drawing.Point(25, 25);
@@ -383,7 +383,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(496, 295);
             this.Controls.Add(this.panelProfilePic);
             this.Controls.Add(this.labelNotification);

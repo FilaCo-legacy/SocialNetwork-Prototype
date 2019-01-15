@@ -26,8 +26,7 @@ namespace SocialNetwork
             MakeEmpty();           
             if (ShowDialog() == DialogResult.OK)
             {
-                string fullName = string.Format($"{textLastName.Text.Trim()} {textFirstName.Text.Trim()} " +
-                    $"{textMidName.Text.Trim()}");
+                string fullName = string.Format($"{textLastName.Text} {textFirstName.Text} " + $"{textMidName.Text}");
                 TGender chosenGender = radioButMan.Checked ? TGender.MAN : TGender.WOMAN;
                 TStatus chosenStatus = (TStatus)listMaritalStatus.SelectedIndex;
                 string school = textSchool.Text.Trim();

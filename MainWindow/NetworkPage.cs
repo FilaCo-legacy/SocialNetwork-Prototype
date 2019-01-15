@@ -32,6 +32,9 @@ namespace SocialNetwork
                 MessageBox.Show(e.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             labelFullName.Text = curAcc.PersonData.FullName;
+            float sizeOfLetter = Math.Min(20f, (panelInfo.Width - (panelInfo.Padding.Left + panelInfo.Padding.Right))*1.1f/
+                labelFullName.Text.Length);
+            labelFullName.Font = new Font(labelFullName.Font.Name, sizeOfLetter, FontStyle.Regular);
             dataViewPerson.DataSource = ControlNetworkPage.InfoPerson(curAcc.PersonData);
         }
         private void butEditInfo_Click(object sender, EventArgs e)

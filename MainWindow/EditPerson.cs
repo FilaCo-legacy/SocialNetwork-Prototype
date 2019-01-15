@@ -25,8 +25,7 @@ namespace SocialNetwork
             FillFields(curData);
             if (ShowDialog() == DialogResult.OK)
             {
-                string fullName = string.Format($"{textLastName.Text.Trim()} {textFirstName.Text.Trim()} " +
-                    $"{textMidName.Text.Trim()}");
+                string fullName = string.Format($"{textLastName.Text} {textFirstName.Text} " + $"{textMidName.Text}");
                 if (fullName != curData.PersonData.FullName)
                     curData.PersonData.FullName = fullName;
                 TGender chosenGender = radioButMan.Checked ? TGender.MAN : TGender.WOMAN;

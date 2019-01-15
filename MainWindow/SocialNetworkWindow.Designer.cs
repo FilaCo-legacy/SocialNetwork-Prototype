@@ -58,14 +58,15 @@
             // toolAddPerson
             // 
             this.toolAddPerson.Name = "toolAddPerson";
-            this.toolAddPerson.Size = new System.Drawing.Size(162, 22);
+            this.toolAddPerson.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.toolAddPerson.Size = new System.Drawing.Size(205, 22);
             this.toolAddPerson.Text = "Создать аккаунт";
             this.toolAddPerson.Click += new System.EventHandler(this.toolAddPerson_Click);
             // 
             // toolExit
             // 
             this.toolExit.Name = "toolExit";
-            this.toolExit.Size = new System.Drawing.Size(162, 22);
+            this.toolExit.Size = new System.Drawing.Size(205, 22);
             this.toolExit.Text = "Выход";
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
@@ -83,6 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tabsNetwork);
             this.Controls.Add(this.mainMenu);

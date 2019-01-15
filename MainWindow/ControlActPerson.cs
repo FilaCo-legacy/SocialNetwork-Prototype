@@ -11,7 +11,7 @@ namespace SocialNetwork
 {
     class ControlActPerson
     {
-        private static Regex regExpNames = new Regex(@"^([А-Я][а-я]{1,30}|[A-Z][a-z]{1,30})$");
+        private static Regex regExpNames = new Regex(@"^([А-Я][а-я]{1,20}|[A-Z][a-z]{1,20})$");
         private static Size PIC_SIZE = new Size(100, 100);
         public static Bitmap LoadPic(string path, Size destSize)
         {

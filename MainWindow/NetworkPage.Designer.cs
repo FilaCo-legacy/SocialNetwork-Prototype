@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPage = new System.Windows.Forms.TableLayoutPanel();
+            this.panelNews_Updates = new System.Windows.Forms.Panel();
             this.groupUpdates = new System.Windows.Forms.GroupBox();
+            this.textNews = new System.Windows.Forms.TextBox();
             this.groupNews = new System.Windows.Forms.GroupBox();
             this.dataViewNews = new System.Windows.Forms.DataGridView();
+            this.panelInfo_Album = new System.Windows.Forms.Panel();
+            this.panelInfo = new System.Windows.Forms.Panel();
+            this.labelFullName = new System.Windows.Forms.Label();
+            this.dataGroup = new System.Windows.Forms.GroupBox();
+            this.dataViewPerson = new System.Windows.Forms.DataGridView();
+            this.groupAlbum = new System.Windows.Forms.GroupBox();
+            this.butAddPic = new System.Windows.Forms.Button();
             this.pictureNext = new System.Windows.Forms.PictureBox();
             this.picturePref = new System.Windows.Forms.PictureBox();
             this.pictureCur = new System.Windows.Forms.PictureBox();
-            this.dataGroup = new System.Windows.Forms.GroupBox();
-            this.dataViewPerson = new System.Windows.Forms.DataGridView();
-            this.butAddPic = new System.Windows.Forms.Button();
-            this.textNews = new System.Windows.Forms.TextBox();
-            this.groupAlbum = new System.Windows.Forms.GroupBox();
-            this.pictureProfile = new System.Windows.Forms.PictureBox();
+            this.panelPic_Edit = new System.Windows.Forms.Panel();
             this.panelProfilePic = new System.Windows.Forms.Panel();
             this.butEditInfo = new System.Windows.Forms.Button();
-            this.panelInfo = new System.Windows.Forms.Panel();
-            this.labelFullName = new System.Windows.Forms.Label();
-            this.panelFriends = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupFriends = new System.Windows.Forms.GroupBox();
-            this.panelInfo_Album = new System.Windows.Forms.Panel();
-            this.panelNews_Updates = new System.Windows.Forms.Panel();
-            this.panelPic_Edit = new System.Windows.Forms.Panel();
+            this.pictureProfile = new System.Windows.Forms.PictureBox();
             this.panelFriends_Table = new System.Windows.Forms.Panel();
+            this.groupFriends = new System.Windows.Forms.GroupBox();
+            this.panelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPage.SuspendLayout();
+            this.panelNews_Updates.SuspendLayout();
             this.groupNews.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewNews)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePref)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCur)).BeginInit();
+            this.panelInfo_Album.SuspendLayout();
+            this.panelInfo.SuspendLayout();
             this.dataGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewPerson)).BeginInit();
             this.groupAlbum.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
-            this.panelProfilePic.SuspendLayout();
-            this.panelInfo.SuspendLayout();
-            this.groupFriends.SuspendLayout();
-            this.panelInfo_Album.SuspendLayout();
-            this.panelNews_Updates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePref)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCur)).BeginInit();
             this.panelPic_Edit.SuspendLayout();
+            this.panelProfilePic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.panelFriends_Table.SuspendLayout();
+            this.groupFriends.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPage
@@ -93,11 +93,25 @@
             this.tableLayoutPage.Size = new System.Drawing.Size(1256, 631);
             this.tableLayoutPage.TabIndex = 0;
             // 
+            // panelNews_Updates
+            // 
+            this.panelNews_Updates.BackColor = System.Drawing.Color.Transparent;
+            this.panelNews_Updates.Controls.Add(this.groupUpdates);
+            this.panelNews_Updates.Controls.Add(this.textNews);
+            this.panelNews_Updates.Controls.Add(this.groupNews);
+            this.panelNews_Updates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelNews_Updates.Location = new System.Drawing.Point(230, 280);
+            this.panelNews_Updates.Margin = new System.Windows.Forms.Padding(0);
+            this.panelNews_Updates.Name = "panelNews_Updates";
+            this.panelNews_Updates.Padding = new System.Windows.Forms.Padding(10, 10, 20, 20);
+            this.panelNews_Updates.Size = new System.Drawing.Size(1026, 351);
+            this.panelNews_Updates.TabIndex = 1;
+            // 
             // groupUpdates
             // 
             this.groupUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupUpdates.BackColor = System.Drawing.Color.White;
+            this.groupUpdates.BackColor = System.Drawing.Color.AliceBlue;
             this.groupUpdates.Location = new System.Drawing.Point(762, 10);
             this.groupUpdates.Margin = new System.Windows.Forms.Padding(0);
             this.groupUpdates.Name = "groupUpdates";
@@ -106,20 +120,34 @@
             this.groupUpdates.TabStop = false;
             this.groupUpdates.Text = "Уведомления";
             // 
+            // textNews
+            // 
+            this.textNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textNews.BackColor = System.Drawing.Color.White;
+            this.textNews.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textNews.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textNews.Location = new System.Drawing.Point(10, 10);
+            this.textNews.Margin = new System.Windows.Forms.Padding(0);
+            this.textNews.Multiline = true;
+            this.textNews.Name = "textNews";
+            this.textNews.Size = new System.Drawing.Size(732, 25);
+            this.textNews.TabIndex = 21;
+            this.textNews.Text = "Что у Вас нового?";
+            // 
             // groupNews
             // 
             this.groupNews.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupNews.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupNews.BackColor = System.Drawing.Color.White;
+            this.groupNews.BackColor = System.Drawing.Color.AliceBlue;
             this.groupNews.Controls.Add(this.dataViewNews);
             this.groupNews.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupNews.Location = new System.Drawing.Point(10, 42);
+            this.groupNews.Location = new System.Drawing.Point(10, 55);
             this.groupNews.Margin = new System.Windows.Forms.Padding(0);
             this.groupNews.Name = "groupNews";
-            this.groupNews.Padding = new System.Windows.Forms.Padding(25);
-            this.groupNews.Size = new System.Drawing.Size(732, 289);
+            this.groupNews.Size = new System.Drawing.Size(732, 276);
             this.groupNews.TabIndex = 20;
             this.groupNews.TabStop = false;
             this.groupNews.Text = "Новости";
@@ -130,76 +158,90 @@
             this.dataViewNews.AllowUserToDeleteRows = false;
             this.dataViewNews.AllowUserToResizeColumns = false;
             this.dataViewNews.AllowUserToResizeRows = false;
-            this.dataViewNews.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataViewNews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataViewNews.BackgroundColor = System.Drawing.Color.White;
+            this.dataViewNews.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dataViewNews.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataViewNews.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataViewNews.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewNews.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataViewNews.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataViewNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewNews.ColumnHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataViewNews.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataViewNews.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataViewNews.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewNews.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewNews.EnableHeadersVisualStyles = false;
-            this.dataViewNews.Location = new System.Drawing.Point(25, 38);
+            this.dataViewNews.Location = new System.Drawing.Point(3, 16);
             this.dataViewNews.Margin = new System.Windows.Forms.Padding(0);
             this.dataViewNews.Name = "dataViewNews";
             this.dataViewNews.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewNews.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataViewNews.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataViewNews.RowHeadersVisible = false;
             this.dataViewNews.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataViewNews.Size = new System.Drawing.Size(682, 226);
+            this.dataViewNews.Size = new System.Drawing.Size(726, 257);
             this.dataViewNews.TabIndex = 0;
             // 
-            // pictureNext
+            // panelInfo_Album
             // 
-            this.pictureNext.Location = new System.Drawing.Point(526, 50);
-            this.pictureNext.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureNext.Name = "pictureNext";
-            this.pictureNext.Size = new System.Drawing.Size(100, 100);
-            this.pictureNext.TabIndex = 2;
-            this.pictureNext.TabStop = false;
+            this.panelInfo_Album.BackColor = System.Drawing.Color.Transparent;
+            this.panelInfo_Album.Controls.Add(this.panelInfo);
+            this.panelInfo_Album.Controls.Add(this.groupAlbum);
+            this.panelInfo_Album.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelInfo_Album.Location = new System.Drawing.Point(230, 0);
+            this.panelInfo_Album.Margin = new System.Windows.Forms.Padding(0);
+            this.panelInfo_Album.Name = "panelInfo_Album";
+            this.panelInfo_Album.Padding = new System.Windows.Forms.Padding(10, 20, 20, 10);
+            this.panelInfo_Album.Size = new System.Drawing.Size(1026, 280);
+            this.panelInfo_Album.TabIndex = 0;
             // 
-            // picturePref
+            // panelInfo
             // 
-            this.picturePref.Location = new System.Drawing.Point(77, 50);
-            this.picturePref.Margin = new System.Windows.Forms.Padding(0);
-            this.picturePref.Name = "picturePref";
-            this.picturePref.Size = new System.Drawing.Size(100, 100);
-            this.picturePref.TabIndex = 1;
-            this.picturePref.TabStop = false;
+            this.panelInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelInfo.BackColor = System.Drawing.Color.AliceBlue;
+            this.panelInfo.Controls.Add(this.labelFullName);
+            this.panelInfo.Controls.Add(this.dataGroup);
+            this.panelInfo.Location = new System.Drawing.Point(10, 20);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Padding = new System.Windows.Forms.Padding(25);
+            this.panelInfo.Size = new System.Drawing.Size(300, 250);
+            this.panelInfo.TabIndex = 16;
             // 
-            // pictureCur
+            // labelFullName
             // 
-            this.pictureCur.Location = new System.Drawing.Point(285, 25);
-            this.pictureCur.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureCur.Name = "pictureCur";
-            this.pictureCur.Size = new System.Drawing.Size(150, 150);
-            this.pictureCur.TabIndex = 0;
-            this.pictureCur.TabStop = false;
+            this.labelFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFullName.AutoSize = true;
+            this.labelFullName.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.labelFullName.Location = new System.Drawing.Point(25, 25);
+            this.labelFullName.Margin = new System.Windows.Forms.Padding(0);
+            this.labelFullName.Name = "labelFullName";
+            this.labelFullName.Size = new System.Drawing.Size(72, 33);
+            this.labelFullName.TabIndex = 8;
+            this.labelFullName.Text = "ФИО";
             // 
             // dataGroup
             // 
@@ -222,20 +264,20 @@
             this.dataViewPerson.AllowUserToResizeColumns = false;
             this.dataViewPerson.AllowUserToResizeRows = false;
             this.dataViewPerson.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataViewPerson.BackgroundColor = System.Drawing.Color.White;
+            this.dataViewPerson.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataViewPerson.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataViewPerson.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataViewPerson.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataViewPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewPerson.ColumnHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataViewPerson.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataViewPerson.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataViewPerson.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewPerson.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewPerson.EnableHeadersVisualStyles = false;
@@ -248,37 +290,11 @@
             this.dataViewPerson.Size = new System.Drawing.Size(241, 134);
             this.dataViewPerson.TabIndex = 0;
             // 
-            // butAddPic
-            // 
-            this.butAddPic.Location = new System.Drawing.Point(323, 202);
-            this.butAddPic.Margin = new System.Windows.Forms.Padding(0);
-            this.butAddPic.Name = "butAddPic";
-            this.butAddPic.Size = new System.Drawing.Size(75, 23);
-            this.butAddPic.TabIndex = 3;
-            this.butAddPic.Text = "Добавить";
-            this.butAddPic.UseVisualStyleBackColor = true;
-            // 
-            // textNews
-            // 
-            this.textNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textNews.BackColor = System.Drawing.Color.White;
-            this.textNews.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textNews.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textNews.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.textNews.Location = new System.Drawing.Point(10, 10);
-            this.textNews.Margin = new System.Windows.Forms.Padding(0);
-            this.textNews.Multiline = true;
-            this.textNews.Name = "textNews";
-            this.textNews.Size = new System.Drawing.Size(732, 25);
-            this.textNews.TabIndex = 21;
-            this.textNews.Text = "Что у Вас нового?";
-            // 
             // groupAlbum
             // 
             this.groupAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupAlbum.BackColor = System.Drawing.Color.White;
+            this.groupAlbum.BackColor = System.Drawing.Color.AliceBlue;
             this.groupAlbum.Controls.Add(this.butAddPic);
             this.groupAlbum.Controls.Add(this.pictureNext);
             this.groupAlbum.Controls.Add(this.picturePref);
@@ -292,25 +308,70 @@
             this.groupAlbum.TabStop = false;
             this.groupAlbum.Text = "Альбом";
             // 
-            // pictureProfile
+            // butAddPic
             // 
-            this.pictureProfile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureProfile.BackgroundImage = global::SocialNetwork.Properties.Resources.EmptyProfilePic;
-            this.pictureProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureProfile.Location = new System.Drawing.Point(25, 25);
-            this.pictureProfile.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureProfile.Name = "pictureProfile";
-            this.pictureProfile.Size = new System.Drawing.Size(150, 150);
-            this.pictureProfile.TabIndex = 4;
-            this.pictureProfile.TabStop = false;
+            this.butAddPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.butAddPic.Location = new System.Drawing.Point(301, 202);
+            this.butAddPic.Margin = new System.Windows.Forms.Padding(0);
+            this.butAddPic.Name = "butAddPic";
+            this.butAddPic.Size = new System.Drawing.Size(75, 23);
+            this.butAddPic.TabIndex = 3;
+            this.butAddPic.Text = "Добавить";
+            this.butAddPic.UseVisualStyleBackColor = true;
+            // 
+            // pictureNext
+            // 
+            this.pictureNext.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureNext.Location = new System.Drawing.Point(495, 50);
+            this.pictureNext.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureNext.Name = "pictureNext";
+            this.pictureNext.Size = new System.Drawing.Size(100, 100);
+            this.pictureNext.TabIndex = 2;
+            this.pictureNext.TabStop = false;
+            // 
+            // picturePref
+            // 
+            this.picturePref.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.picturePref.Location = new System.Drawing.Point(81, 50);
+            this.picturePref.Margin = new System.Windows.Forms.Padding(0);
+            this.picturePref.Name = "picturePref";
+            this.picturePref.Size = new System.Drawing.Size(100, 100);
+            this.picturePref.TabIndex = 1;
+            this.picturePref.TabStop = false;
+            // 
+            // pictureCur
+            // 
+            this.pictureCur.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureCur.Location = new System.Drawing.Point(263, 25);
+            this.pictureCur.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureCur.Name = "pictureCur";
+            this.pictureCur.Size = new System.Drawing.Size(150, 150);
+            this.pictureCur.TabIndex = 0;
+            this.pictureCur.TabStop = false;
+            // 
+            // panelPic_Edit
+            // 
+            this.panelPic_Edit.BackColor = System.Drawing.Color.Transparent;
+            this.panelPic_Edit.Controls.Add(this.panelProfilePic);
+            this.panelPic_Edit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPic_Edit.Location = new System.Drawing.Point(0, 0);
+            this.panelPic_Edit.Margin = new System.Windows.Forms.Padding(0);
+            this.panelPic_Edit.Name = "panelPic_Edit";
+            this.panelPic_Edit.Padding = new System.Windows.Forms.Padding(20, 20, 10, 10);
+            this.panelPic_Edit.Size = new System.Drawing.Size(230, 280);
+            this.panelPic_Edit.TabIndex = 19;
             // 
             // panelProfilePic
             // 
             this.panelProfilePic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelProfilePic.BackColor = System.Drawing.Color.White;
+            this.panelProfilePic.BackColor = System.Drawing.Color.AliceBlue;
             this.panelProfilePic.Controls.Add(this.butEditInfo);
             this.panelProfilePic.Controls.Add(this.pictureProfile);
             this.panelProfilePic.Location = new System.Drawing.Point(20, 20);
@@ -329,101 +390,24 @@
             this.butEditInfo.TabIndex = 5;
             this.butEditInfo.Text = "Редактировать";
             this.butEditInfo.UseVisualStyleBackColor = true;
+            this.butEditInfo.Click += new System.EventHandler(this.butEditInfo_Click);
             // 
-            // panelInfo
+            // pictureProfile
             // 
-            this.panelInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelInfo.BackColor = System.Drawing.Color.White;
-            this.panelInfo.Controls.Add(this.labelFullName);
-            this.panelInfo.Controls.Add(this.dataGroup);
-            this.panelInfo.Location = new System.Drawing.Point(10, 20);
-            this.panelInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Padding = new System.Windows.Forms.Padding(25);
-            this.panelInfo.Size = new System.Drawing.Size(300, 250);
-            this.panelInfo.TabIndex = 16;
-            // 
-            // labelFullName
-            // 
-            this.labelFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFullName.AutoSize = true;
-            this.labelFullName.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFullName.Location = new System.Drawing.Point(25, 25);
-            this.labelFullName.Margin = new System.Windows.Forms.Padding(0);
-            this.labelFullName.Name = "labelFullName";
-            this.labelFullName.Size = new System.Drawing.Size(72, 33);
-            this.labelFullName.TabIndex = 8;
-            this.labelFullName.Text = "ФИО";
-            // 
-            // panelFriends
-            // 
-            this.panelFriends.AutoScroll = true;
-            this.panelFriends.BackColor = System.Drawing.Color.Transparent;
-            this.panelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFriends.Location = new System.Drawing.Point(10, 23);
-            this.panelFriends.Margin = new System.Windows.Forms.Padding(0);
-            this.panelFriends.Name = "panelFriends";
-            this.panelFriends.Size = new System.Drawing.Size(180, 252);
-            this.panelFriends.TabIndex = 6;
-            // 
-            // groupFriends
-            // 
-            this.groupFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupFriends.BackColor = System.Drawing.Color.White;
-            this.groupFriends.Controls.Add(this.panelFriends);
-            this.groupFriends.Location = new System.Drawing.Point(20, 10);
-            this.groupFriends.Margin = new System.Windows.Forms.Padding(0);
-            this.groupFriends.Name = "groupFriends";
-            this.groupFriends.Padding = new System.Windows.Forms.Padding(10);
-            this.groupFriends.Size = new System.Drawing.Size(200, 285);
-            this.groupFriends.TabIndex = 18;
-            this.groupFriends.TabStop = false;
-            this.groupFriends.Text = "Друзья";
-            // 
-            // panelInfo_Album
-            // 
-            this.panelInfo_Album.Controls.Add(this.panelInfo);
-            this.panelInfo_Album.Controls.Add(this.groupAlbum);
-            this.panelInfo_Album.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelInfo_Album.Location = new System.Drawing.Point(230, 0);
-            this.panelInfo_Album.Margin = new System.Windows.Forms.Padding(0);
-            this.panelInfo_Album.Name = "panelInfo_Album";
-            this.panelInfo_Album.Padding = new System.Windows.Forms.Padding(10, 20, 20, 10);
-            this.panelInfo_Album.Size = new System.Drawing.Size(1026, 280);
-            this.panelInfo_Album.TabIndex = 0;
-            // 
-            // panelNews_Updates
-            // 
-            this.panelNews_Updates.Controls.Add(this.groupUpdates);
-            this.panelNews_Updates.Controls.Add(this.textNews);
-            this.panelNews_Updates.Controls.Add(this.groupNews);
-            this.panelNews_Updates.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNews_Updates.Location = new System.Drawing.Point(230, 280);
-            this.panelNews_Updates.Margin = new System.Windows.Forms.Padding(0);
-            this.panelNews_Updates.Name = "panelNews_Updates";
-            this.panelNews_Updates.Padding = new System.Windows.Forms.Padding(10, 10, 20, 20);
-            this.panelNews_Updates.Size = new System.Drawing.Size(1026, 351);
-            this.panelNews_Updates.TabIndex = 1;
-            // 
-            // panelPic_Edit
-            // 
-            this.panelPic_Edit.Controls.Add(this.panelProfilePic);
-            this.panelPic_Edit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPic_Edit.Location = new System.Drawing.Point(0, 0);
-            this.panelPic_Edit.Margin = new System.Windows.Forms.Padding(0);
-            this.panelPic_Edit.Name = "panelPic_Edit";
-            this.panelPic_Edit.Padding = new System.Windows.Forms.Padding(20, 20, 10, 10);
-            this.panelPic_Edit.Size = new System.Drawing.Size(230, 280);
-            this.panelPic_Edit.TabIndex = 19;
+            this.pictureProfile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureProfile.BackgroundImage = global::SocialNetwork.Properties.Resources.EmptyProfilePic;
+            this.pictureProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureProfile.Location = new System.Drawing.Point(25, 25);
+            this.pictureProfile.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(150, 150);
+            this.pictureProfile.TabIndex = 4;
+            this.pictureProfile.TabStop = false;
             // 
             // panelFriends_Table
             // 
+            this.panelFriends_Table.BackColor = System.Drawing.Color.Transparent;
             this.panelFriends_Table.Controls.Add(this.groupFriends);
             this.panelFriends_Table.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFriends_Table.Location = new System.Drawing.Point(0, 280);
@@ -433,36 +417,63 @@
             this.panelFriends_Table.Size = new System.Drawing.Size(230, 351);
             this.panelFriends_Table.TabIndex = 20;
             // 
+            // groupFriends
+            // 
+            this.groupFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupFriends.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupFriends.Controls.Add(this.panelFriends);
+            this.groupFriends.Location = new System.Drawing.Point(20, 10);
+            this.groupFriends.Margin = new System.Windows.Forms.Padding(0);
+            this.groupFriends.Name = "groupFriends";
+            this.groupFriends.Padding = new System.Windows.Forms.Padding(10);
+            this.groupFriends.Size = new System.Drawing.Size(200, 321);
+            this.groupFriends.TabIndex = 18;
+            this.groupFriends.TabStop = false;
+            this.groupFriends.Text = "Друзья";
+            // 
+            // panelFriends
+            // 
+            this.panelFriends.AutoScroll = true;
+            this.panelFriends.BackColor = System.Drawing.Color.Transparent;
+            this.panelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFriends.Location = new System.Drawing.Point(10, 23);
+            this.panelFriends.Margin = new System.Windows.Forms.Padding(0);
+            this.panelFriends.Name = "panelFriends";
+            this.panelFriends.Size = new System.Drawing.Size(180, 288);
+            this.panelFriends.TabIndex = 6;
+            // 
             // NetworkPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.Controls.Add(this.tableLayoutPage);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MinimumSize = new System.Drawing.Size(1256, 631);
             this.Name = "NetworkPage";
             this.Size = new System.Drawing.Size(1256, 631);
             this.tableLayoutPage.ResumeLayout(false);
+            this.panelNews_Updates.ResumeLayout(false);
+            this.panelNews_Updates.PerformLayout();
             this.groupNews.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataViewNews)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePref)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCur)).EndInit();
+            this.panelInfo_Album.ResumeLayout(false);
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
             this.dataGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataViewPerson)).EndInit();
             this.groupAlbum.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
-            this.panelProfilePic.ResumeLayout(false);
-            this.panelInfo.ResumeLayout(false);
-            this.panelInfo.PerformLayout();
-            this.groupFriends.ResumeLayout(false);
-            this.panelInfo_Album.ResumeLayout(false);
-            this.panelNews_Updates.ResumeLayout(false);
-            this.panelNews_Updates.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePref)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCur)).EndInit();
             this.panelPic_Edit.ResumeLayout(false);
+            this.panelProfilePic.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.panelFriends_Table.ResumeLayout(false);
+            this.groupFriends.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
