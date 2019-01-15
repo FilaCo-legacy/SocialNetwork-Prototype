@@ -21,7 +21,7 @@ namespace SocialNetwork
             InitializeComponent();
             MakeEmpty();
         }
-        internal AccountInfo GetInfoNewAcc()
+        public TPerson GetInfoNewAcc()
         {
             MakeEmpty();           
             if (ShowDialog() == DialogResult.OK)
@@ -33,8 +33,8 @@ namespace SocialNetwork
                 string highSchool = textHighSchool.Text.Trim();
                 TPerson nPerson = new TPerson(fullName, chooseDateOfBirth.Value, chosenGender, chosenStatus, school,
                     highSchool);
-                AccountInfo nAccount = new AccountInfo(nPerson, choosePicDialog.FileName);
-                return nAccount;
+                nPerson.ProfilePic = choosePicDialog.FileName;
+                return nPerson;
             }
             return null;
         }

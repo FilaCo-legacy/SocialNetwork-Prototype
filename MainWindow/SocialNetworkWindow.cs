@@ -26,11 +26,11 @@ namespace SocialNetwork
 
         private void toolAddPerson_Click(object sender, EventArgs e)
         {
-            AccountInfo nAccount = addPerson.GetInfoNewAcc();
+            TPerson nAccount = addPerson.GetInfoNewAcc();
             if (nAccount != null)
             {
                 Adapter.AddAccount(nAccount);
-                tabsNetwork.TabPages.Add(nAccount.PersonData.FullName);
+                tabsNetwork.TabPages.Add(nAccount.FullName);
                 NetworkPage np = new NetworkPage(nAccount);
                 np.Dock = DockStyle.Fill;
                 tabsNetwork.TabPages[tabsNetwork.TabPages.Count - 1].Controls.Add(np);

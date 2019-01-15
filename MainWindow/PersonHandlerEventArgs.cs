@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialNetwork
 {
-    class PersonHandlerEventArgs:EventArgs
+    public class PersonHandlerEventArgs:EventArgs
     {
         public string Source { get; set; }
         public TMessage MessageType { get; set; }

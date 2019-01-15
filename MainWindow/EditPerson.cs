@@ -20,31 +20,31 @@ namespace SocialNetwork
         {
             InitializeComponent();
         }
-        internal void EditAcc(ref AccountInfo curData)
+        internal void EditAcc(ref TPerson curData)
         {
             FillFields(curData);
             if (ShowDialog() == DialogResult.OK)
             {
                 string fullName = string.Format($"{textLastName.Text} {textFirstName.Text} " + $"{textMidName.Text}");
-                if (fullName != curData.PersonData.FullName)
-                    curData.PersonData.FullName = fullName;
+                if (fullName != curData.FullName)
+                    curData.FullName = fullName;
                 TGender chosenGender = radioButMan.Checked ? TGender.MAN : TGender.WOMAN;
-                if (chosenGender != curData.PersonData.Gender)
-                    curData.PersonData.Gender = chosenGender;
+                if (chosenGender != curData.Gender)
+                    curData.Gender = chosenGender;
                 TStatus chosenStatus = (TStatus)listMaritalStatus.SelectedIndex;
-                if (chosenStatus != curData.PersonData.MaritalStatus)
-                    curData.PersonData.MaritalStatus = chosenStatus;
+                if (chosenStatus != curData.MaritalStatus)
+                    curData.MaritalStatus = chosenStatus;
                 string school = textSchool.Text.Trim();
-                if (school != curData.PersonData.School)
-                    curData.PersonData.School = school;
+                if (school != curData.School)
+                    curData.School = school;
                 string highSchool = textHighSchool.Text.Trim();
-                if (highSchool != curData.PersonData.HighSchool)
-                    curData.PersonData.HighSchool = highSchool;
+                if (highSchool != curData.HighSchool)
+                    curData.HighSchool = highSchool;
                 if (choosePicDialog.FileName != "")
                     curData.ProfilePic = choosePicDialog.FileName;
             }
         }
-        private void FillFields(AccountInfo _curData)
+        private void FillFields(TPerson _curData)
         {
             try
             {
@@ -54,20 +54,20 @@ namespace SocialNetwork
             {
                 MessageBox.Show(e.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            string[] splittedFullName = _curData.PersonData.FullName.Split(' ');
+            string[] splittedFullName = _curData.FullName.Split(' ');
             textLastName.Text = splittedFullName[0];
             textFirstName.Text = splittedFullName[1];
             textMidName.Text = splittedFullName[2];
-            listMaritalStatus.SelectedIndex = (int)_curData.PersonData.MaritalStatus;
-            chooseDateOfBirth.Value = _curData.PersonData.DateOfBirth;
-            if (_curData.PersonData.Gender == TGender.MAN)
+            listMaritalStatus.SelectedIndex = (int)_curData.MaritalStatus;
+            chooseDateOfBirth.Value = _curData.DateOfBirth;
+            if (_curData.Gender == TGender.MAN)
                 radioButMan.Checked = true;
             else
                 radioButWoman.Checked = true;
             isCorrectFirstName = isCorrectMidName = isCorrectLastName = isCorrectGender = true;
             buttonCreate.Enabled = true;
-            textSchool.Text = _curData.PersonData.School;
-            textHighSchool.Text = _curData.PersonData.HighSchool;
+            textSchool.Text = _curData.School;
+            textHighSchool.Text = _curData.HighSchool;
         }
         private void buttonChoosePicture_Click(object sender, EventArgs e)
         {

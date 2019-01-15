@@ -7,10 +7,10 @@ using System.Drawing;
 
 namespace SocialNetwork
 {
-    enum TGender { MAN, WOMAN }
-    enum TStatus { NOT_CHOSEN, NOT_MARRIED, IN_RELATIONSHIP, ENGAGED, MARRIED, IN_LOVE, COMPLICATED, IN_ACTIVE_SEARCH }
-    delegate void PersonHandler(object source, PersonHandlerEventArgs args);
-    class TPerson
+    public enum TGender { MAN, WOMAN }
+    public enum TStatus { NOT_CHOSEN, NOT_MARRIED, IN_RELATIONSHIP, ENGAGED, MARRIED, IN_LOVE, COMPLICATED, IN_ACTIVE_SEARCH }
+    public delegate void PersonHandler(object source, PersonHandlerEventArgs args);
+    public class TPerson
     {
         private TJournal updates;
         private string fullName;
@@ -90,6 +90,11 @@ namespace SocialNetwork
                 OnPersonCharacteristicsChanged(this, _args);
             }
         }
+        public string ProfilePic
+        {
+            get { return Pictures[0]; }
+            set { Pictures[0] = value; }
+        }
         public TPerson(string _fullName, DateTime _dateOfBirth, TGender _gender, TStatus _maritalStatus, string _school, 
             string _highSchool)
         {
@@ -103,6 +108,7 @@ namespace SocialNetwork
             Friends = new SortedSet<TPerson>();
             News = new List<string>();
             Pictures = new List<string>();
+            Pictures.Add("");
         }
         public void AddFriend(TPerson _person)
         {
