@@ -67,7 +67,7 @@
             this.buttonCreate.Location = new System.Drawing.Point(317, 249);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(75, 23);
-            this.buttonCreate.TabIndex = 0;
+            this.buttonCreate.TabIndex = 10;
             this.buttonCreate.Text = "Создать";
             this.buttonCreate.UseVisualStyleBackColor = true;
             // 
@@ -79,6 +79,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 1;
+            this.buttonCancel.TabStop = false;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +88,7 @@
             this.buttonChoosePicture.Location = new System.Drawing.Point(23, 117);
             this.buttonChoosePicture.Name = "buttonChoosePicture";
             this.buttonChoosePicture.Size = new System.Drawing.Size(75, 23);
-            this.buttonChoosePicture.TabIndex = 3;
+            this.buttonChoosePicture.TabIndex = 9;
             this.buttonChoosePicture.Text = "Обзор";
             this.buttonChoosePicture.UseVisualStyleBackColor = true;
             this.buttonChoosePicture.Click += new System.EventHandler(this.buttonChoosePicture_Click);
@@ -140,7 +141,7 @@
             this.textMidName.Margin = new System.Windows.Forms.Padding(0);
             this.textMidName.Name = "textMidName";
             this.textMidName.Size = new System.Drawing.Size(142, 20);
-            this.textMidName.TabIndex = 17;
+            this.textMidName.TabIndex = 2;
             this.textMidName.TextChanged += new System.EventHandler(this.textMidName_TextChanged);
             // 
             // textHighSchool
@@ -150,7 +151,7 @@
             this.textHighSchool.Margin = new System.Windows.Forms.Padding(0);
             this.textHighSchool.Name = "textHighSchool";
             this.textHighSchool.Size = new System.Drawing.Size(142, 20);
-            this.textHighSchool.TabIndex = 16;
+            this.textHighSchool.TabIndex = 8;
             // 
             // labelHighSchool
             // 
@@ -171,7 +172,7 @@
             this.textSchool.Margin = new System.Windows.Forms.Padding(0);
             this.textSchool.Name = "textSchool";
             this.textSchool.Size = new System.Drawing.Size(142, 20);
-            this.textSchool.TabIndex = 14;
+            this.textSchool.TabIndex = 7;
             // 
             // labelSchool
             // 
@@ -192,7 +193,7 @@
             this.textFirstName.Margin = new System.Windows.Forms.Padding(0);
             this.textFirstName.Name = "textFirstName";
             this.textFirstName.Size = new System.Drawing.Size(142, 20);
-            this.textFirstName.TabIndex = 9;
+            this.textFirstName.TabIndex = 1;
             this.textFirstName.TextChanged += new System.EventHandler(this.textFirstName_TextChanged);
             // 
             // labelLastName
@@ -274,7 +275,7 @@
             this.textLastName.Margin = new System.Windows.Forms.Padding(0);
             this.textLastName.Name = "textLastName";
             this.textLastName.Size = new System.Drawing.Size(142, 20);
-            this.textLastName.TabIndex = 8;
+            this.textLastName.TabIndex = 0;
             this.textLastName.TextChanged += new System.EventHandler(this.textLastName_TextChanged);
             // 
             // panelGender
@@ -285,7 +286,7 @@
             this.panelGender.Location = new System.Drawing.Point(123, 83);
             this.panelGender.Name = "panelGender";
             this.panelGender.Size = new System.Drawing.Size(136, 14);
-            this.panelGender.TabIndex = 1;
+            this.panelGender.TabIndex = 4;
             // 
             // radioButWoman
             // 
@@ -333,7 +334,7 @@
             this.listMaritalStatus.Margin = new System.Windows.Forms.Padding(0);
             this.listMaritalStatus.Name = "listMaritalStatus";
             this.listMaritalStatus.Size = new System.Drawing.Size(142, 21);
-            this.listMaritalStatus.TabIndex = 19;
+            this.listMaritalStatus.TabIndex = 6;
             // 
             // chooseDateOfBirth
             // 
@@ -344,7 +345,7 @@
             this.chooseDateOfBirth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.chooseDateOfBirth.Name = "chooseDateOfBirth";
             this.chooseDateOfBirth.Size = new System.Drawing.Size(142, 20);
-            this.chooseDateOfBirth.TabIndex = 20;
+            this.chooseDateOfBirth.TabIndex = 3;
             this.chooseDateOfBirth.Value = new System.DateTime(2019, 1, 12, 0, 0, 0, 0);
             // 
             // labelNotification

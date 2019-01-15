@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPage = new System.Windows.Forms.TableLayoutPanel();
             this.panelNews_Updates = new System.Windows.Forms.Panel();
             this.groupUpdates = new System.Windows.Forms.GroupBox();
@@ -91,7 +89,7 @@
             this.tableLayoutPage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 280F));
             this.tableLayoutPage.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPage.Size = new System.Drawing.Size(1256, 631);
-            this.tableLayoutPage.TabIndex = 0;
+            this.tableLayoutPage.TabIndex = 20;
             // 
             // panelNews_Updates
             // 
@@ -112,6 +110,7 @@
             this.groupUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupUpdates.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupUpdates.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupUpdates.Location = new System.Drawing.Point(762, 10);
             this.groupUpdates.Margin = new System.Windows.Forms.Padding(0);
             this.groupUpdates.Name = "groupUpdates";
@@ -124,15 +123,16 @@
             // 
             this.textNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textNews.BackColor = System.Drawing.Color.White;
+            this.textNews.BackColor = System.Drawing.Color.AliceBlue;
+            this.textNews.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textNews.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textNews.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textNews.ForeColor = System.Drawing.Color.DarkGray;
             this.textNews.Location = new System.Drawing.Point(10, 10);
             this.textNews.Margin = new System.Windows.Forms.Padding(0);
             this.textNews.Multiline = true;
             this.textNews.Name = "textNews";
             this.textNews.Size = new System.Drawing.Size(732, 25);
-            this.textNews.TabIndex = 21;
+            this.textNews.TabIndex = 2;
             this.textNews.Text = "Что у Вас нового?";
             // 
             // groupNews
@@ -143,7 +143,7 @@
             this.groupNews.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupNews.BackColor = System.Drawing.Color.AliceBlue;
             this.groupNews.Controls.Add(this.dataViewNews);
-            this.groupNews.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupNews.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupNews.Location = new System.Drawing.Point(10, 55);
             this.groupNews.Margin = new System.Windows.Forms.Padding(0);
             this.groupNews.Name = "groupNews";
@@ -163,43 +163,27 @@
             this.dataViewNews.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataViewNews.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataViewNews.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewNews.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataViewNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewNews.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataViewNews.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataViewNews.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataViewNews.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewNews.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewNews.EnableHeadersVisualStyles = false;
-            this.dataViewNews.Location = new System.Drawing.Point(3, 16);
+            this.dataViewNews.Location = new System.Drawing.Point(3, 17);
             this.dataViewNews.Margin = new System.Windows.Forms.Padding(0);
             this.dataViewNews.Name = "dataViewNews";
             this.dataViewNews.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewNews.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataViewNews.RowHeadersVisible = false;
             this.dataViewNews.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataViewNews.Size = new System.Drawing.Size(726, 257);
-            this.dataViewNews.TabIndex = 0;
+            this.dataViewNews.Size = new System.Drawing.Size(726, 256);
+            this.dataViewNews.TabIndex = 3;
             // 
             // panelInfo_Album
             // 
@@ -235,7 +219,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFullName.AutoSize = true;
-            this.labelFullName.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.labelFullName.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFullName.Location = new System.Drawing.Point(25, 25);
             this.labelFullName.Margin = new System.Windows.Forms.Padding(0);
             this.labelFullName.Name = "labelFullName";
@@ -249,6 +233,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGroup.Controls.Add(this.dataViewPerson);
+            this.dataGroup.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataGroup.Location = new System.Drawing.Point(25, 69);
             this.dataGroup.Margin = new System.Windows.Forms.Padding(0);
             this.dataGroup.Name = "dataGroup";
@@ -270,25 +255,26 @@
             this.dataViewPerson.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataViewPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewPerson.ColumnHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataViewPerson.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataViewPerson.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataViewPerson.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewPerson.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewPerson.EnableHeadersVisualStyles = false;
-            this.dataViewPerson.Location = new System.Drawing.Point(3, 16);
+            this.dataViewPerson.Location = new System.Drawing.Point(3, 17);
             this.dataViewPerson.Margin = new System.Windows.Forms.Padding(0);
             this.dataViewPerson.Name = "dataViewPerson";
             this.dataViewPerson.ReadOnly = true;
             this.dataViewPerson.RowHeadersVisible = false;
             this.dataViewPerson.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataViewPerson.Size = new System.Drawing.Size(241, 134);
+            this.dataViewPerson.Size = new System.Drawing.Size(241, 133);
             this.dataViewPerson.TabIndex = 0;
+            this.dataViewPerson.TabStop = false;
             // 
             // groupAlbum
             // 
@@ -299,6 +285,7 @@
             this.groupAlbum.Controls.Add(this.pictureNext);
             this.groupAlbum.Controls.Add(this.picturePref);
             this.groupAlbum.Controls.Add(this.pictureCur);
+            this.groupAlbum.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupAlbum.Location = new System.Drawing.Point(330, 20);
             this.groupAlbum.Margin = new System.Windows.Forms.Padding(0);
             this.groupAlbum.Name = "groupAlbum";
@@ -316,7 +303,7 @@
             this.butAddPic.Margin = new System.Windows.Forms.Padding(0);
             this.butAddPic.Name = "butAddPic";
             this.butAddPic.Size = new System.Drawing.Size(75, 23);
-            this.butAddPic.TabIndex = 3;
+            this.butAddPic.TabIndex = 1;
             this.butAddPic.Text = "Добавить";
             this.butAddPic.UseVisualStyleBackColor = true;
             // 
@@ -383,11 +370,12 @@
             // 
             // butEditInfo
             // 
+            this.butEditInfo.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.butEditInfo.Location = new System.Drawing.Point(50, 202);
             this.butEditInfo.Margin = new System.Windows.Forms.Padding(0);
             this.butEditInfo.Name = "butEditInfo";
             this.butEditInfo.Size = new System.Drawing.Size(100, 23);
-            this.butEditInfo.TabIndex = 5;
+            this.butEditInfo.TabIndex = 0;
             this.butEditInfo.Text = "Редактировать";
             this.butEditInfo.UseVisualStyleBackColor = true;
             this.butEditInfo.Click += new System.EventHandler(this.butEditInfo_Click);
@@ -424,6 +412,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupFriends.BackColor = System.Drawing.Color.AliceBlue;
             this.groupFriends.Controls.Add(this.panelFriends);
+            this.groupFriends.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupFriends.Location = new System.Drawing.Point(20, 10);
             this.groupFriends.Margin = new System.Windows.Forms.Padding(0);
             this.groupFriends.Name = "groupFriends";
@@ -438,10 +427,10 @@
             this.panelFriends.AutoScroll = true;
             this.panelFriends.BackColor = System.Drawing.Color.Transparent;
             this.panelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFriends.Location = new System.Drawing.Point(10, 23);
+            this.panelFriends.Location = new System.Drawing.Point(10, 24);
             this.panelFriends.Margin = new System.Windows.Forms.Padding(0);
             this.panelFriends.Name = "panelFriends";
-            this.panelFriends.Size = new System.Drawing.Size(180, 288);
+            this.panelFriends.Size = new System.Drawing.Size(180, 287);
             this.panelFriends.TabIndex = 6;
             // 
             // NetworkPage

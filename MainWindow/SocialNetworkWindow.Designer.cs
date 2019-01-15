@@ -38,6 +38,7 @@
             // 
             // mainMenu
             // 
+            this.mainMenu.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actionTool});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
@@ -52,27 +53,28 @@
             this.toolAddPerson,
             this.toolExit});
             this.actionTool.Name = "actionTool";
-            this.actionTool.Size = new System.Drawing.Size(70, 20);
+            this.actionTool.Size = new System.Drawing.Size(68, 20);
             this.actionTool.Text = "Действие";
             // 
             // toolAddPerson
             // 
             this.toolAddPerson.Name = "toolAddPerson";
             this.toolAddPerson.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.toolAddPerson.Size = new System.Drawing.Size(205, 22);
+            this.toolAddPerson.Size = new System.Drawing.Size(201, 22);
             this.toolAddPerson.Text = "Создать аккаунт";
             this.toolAddPerson.Click += new System.EventHandler(this.toolAddPerson_Click);
             // 
             // toolExit
             // 
             this.toolExit.Name = "toolExit";
-            this.toolExit.Size = new System.Drawing.Size(205, 22);
+            this.toolExit.Size = new System.Drawing.Size(201, 22);
             this.toolExit.Text = "Выход";
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
             // tabsNetwork
             // 
             this.tabsNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabsNetwork.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabsNetwork.Location = new System.Drawing.Point(0, 24);
             this.tabsNetwork.Multiline = true;
             this.tabsNetwork.Name = "tabsNetwork";
@@ -88,6 +90,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tabsNetwork);
             this.Controls.Add(this.mainMenu);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "SocialNetworkWindow";
             this.Text = "Kungur Social Network";

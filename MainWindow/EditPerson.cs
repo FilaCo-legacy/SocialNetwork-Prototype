@@ -132,5 +132,6 @@ namespace SocialNetwork
             listMaritalStatus.SelectedIndex = ind;
             buttonCreate.Enabled = isCorrectFirstName && isCorrectLastName && isCorrectMidName && isCorrectGender;
         }
+
     }
 }
