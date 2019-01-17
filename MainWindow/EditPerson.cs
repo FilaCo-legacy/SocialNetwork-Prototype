@@ -16,11 +16,11 @@ namespace SocialNetwork
         private bool isCorrectMidName;
         private bool isCorrectLastName;
         private bool isCorrectGender;
-        internal EditPerson()
+        public EditPerson()
         {
             InitializeComponent();
         }
-        internal void EditAcc(ref TPerson curData)
+        public void EditAcc(ref TPerson curData)
         {
             FillFields(curData);
             if (ShowDialog() == DialogResult.OK)
@@ -48,7 +48,7 @@ namespace SocialNetwork
         {
             try
             {
-                profilePicture.Image = ControlActPerson.LoadPic(choosePicDialog.FileName, profilePicture.Size);
+                profilePicture.Image = ControlActPerson.LoadPic(_curData.ProfilePic, profilePicture.Size);
             }
             catch (Exception e)
             {

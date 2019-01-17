@@ -153,8 +153,8 @@ namespace SocialNetwork
         }
         public void RemovePicture(string fileName)
         {
-            if (!Pictures.Contains(fileName))
-                throw new Exception($"{fileName} - этой картинки нет в списке картинок");
+            if (!Pictures.Contains(fileName) || Pictures.Count == 1)
+                return;
             PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.PICTURE_DELETED, DateTime.Now,
        $"Удалена картинка \"{fileName}\"");
             Pictures.Remove(fileName);

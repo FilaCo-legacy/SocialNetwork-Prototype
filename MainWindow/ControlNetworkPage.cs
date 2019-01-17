@@ -11,6 +11,47 @@ namespace SocialNetwork
 {
     class ControlNetworkPage
     {
+        public static string [] DisplayPictures(ref int ind, int delta, TPerson curAcc)
+        { 
+            string[] paths = new string[3] { "", "", "" };
+            if (curAcc.Pictures.Count == 1)
+                return paths;
+            ind += delta;
+            ind %= curAcc.Pictures.Count;
+            if (ind == 0)
+            {
+                if (delta < 0)
+                    ind = curAcc.Pictures.Count - 1;
+                else
+                    ind = 1;
+            }
+            int prefInd = ind - 1 == 0 ? curAcc.Pictures.Count - 1 : ind - 1;
+            int nextInd = ind + 1 == curAcc.Pictures.Count ? 1 : ind + 1;
+            paths[0] = curAcc.Pictures[prefInd];
+            paths[1] = curAcc.Pictures[ind];
+            paths[2] = curAcc.Pictures[nextInd];
+            if (curAcc.Pictures.Count == 2)
+                paths[0] = paths[2] = "";
+            if (curAcc.Pictures.Count == 3)
+            {
+                if (delta > 0 )
+                    paths[0] = "";
+                else
+                    paths[2] = "";
+            }
+            return paths;
+        }
+        public static void AddPictures(TPerson curAcc, params string [] paths)
+        {
+            for (int i = 0; i < paths.Length; ++i)
+                curAcc.AddPicture(paths[i]);
+        }
+        public static void RemovePictures(TPerson curAcc, int ind)
+        {
+            if (curAcc.Pictures.Count <= ind)
+                return;
+            curAcc.RemovePicture(curAcc.Pictures[ind]);
+        }
         public static DataTable InfoPerson(TPerson source)
         {
             DataTable tab = new DataTable();

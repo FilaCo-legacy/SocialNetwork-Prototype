@@ -16,9 +16,9 @@ namespace SocialNetwork
         {
             InitializeComponent();
             addPerson = new AddPerson();
-            //editPerson = new EditPerson();
+            
         }
-
+        
         private void toolExit_Click(object sender, EventArgs e)
         {
             this.Close();

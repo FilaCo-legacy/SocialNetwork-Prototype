@@ -13,12 +13,60 @@ namespace SocialNetwork
     public partial class NetworkPage : UserControl
     {
         private TPerson curAcc;
-        internal NetworkPage(TPerson _curAcc)
+        private int curIndPicture;
+        public NetworkPage(TPerson _curAcc)
         {
             InitializeComponent();
             editPerson = new EditPerson();
             curAcc = _curAcc;
             FillInfo();
+           
+            groupAlbum.MouseWheel += groupAlbum_MouseWheel;
+            groupAlbum.KeyDown += groupAlbum_KeyDown;
+            groupAlbum.MouseEnter += groupAlbum_MouseEnter;
+            groupAlbum.PreviewKeyDown += groupAlbum_PreviewKeyDown;
+        }
+
+        private void displayPictures(string [] paths)
+        {
+            picturePref.Image = ControlNetworkPage.LoadPic(paths[0], picturePref.Size);
+            pictureCur.Image = ControlNetworkPage.LoadPic(paths[1], pictureCur.Size);
+            pictureNext.Image = ControlNetworkPage.LoadPic(paths[2], pictureNext.Size);
+        }
+        private void groupAlbum_PreviewKeyDown(object sender, PreviewKeyDownEventArgs args)
+        {
+            if (args.KeyCode == Keys.Left || args.KeyCode == Keys.Right)
+                args.IsInputKey = true;
+        }
+        private void groupAlbum_MouseEnter(object sender, EventArgs args)
+        {
+           groupAlbum.Focus();
+            //groupAlbum.Select();
+        }
+        private void groupAlbum_MouseWheel(object sender, MouseEventArgs args)
+        {
+            
+            string[] displayPic = ControlNetworkPage.DisplayPictures(ref curIndPicture, args.Delta/ 
+                SystemInformation.MouseWheelScrollDelta, curAcc);
+            displayPictures(displayPic);
+        }
+        private void groupAlbum_KeyDown(object sender, KeyEventArgs args)
+        {
+            string[] displayPic;
+            switch (args.KeyCode)
+            {
+                case Keys.Left:
+                    displayPic= ControlNetworkPage.DisplayPictures(ref curIndPicture, -1, curAcc);
+                    displayPictures(displayPic);
+                    break;
+                case Keys.Right:
+                    displayPic = ControlNetworkPage.DisplayPictures(ref curIndPicture, 1, curAcc);
+                    displayPictures(displayPic);
+                    break;
+                case Keys.Delete:
+                    butDelPic_Click(sender, args);
+                    break;
+            }
         }
         private void FillInfo()
         {
@@ -41,6 +89,30 @@ namespace SocialNetwork
         {
             editPerson.EditAcc(ref curAcc);
             FillInfo();
+        }
+        private void butAddPic_Click(object sender, EventArgs e)
+        {
+            if (loadPicDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    int ind = curAcc.Pictures.Count;
+                    ControlNetworkPage.AddPictures(curAcc, loadPicDialog.FileNames);
+                    string[] displayPic = ControlNetworkPage.DisplayPictures(ref curIndPicture, 0, curAcc);
+                    displayPictures(displayPic);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }               
+            }
+        }
+
+        private void butDelPic_Click(object sender, EventArgs e)
+        {
+            ControlNetworkPage.RemovePictures(curAcc, curIndPicture);
+            string[] displayPic = ControlNetworkPage.DisplayPictures(ref curIndPicture, 0, curAcc);
+            displayPictures(displayPic);
         }
     }
 }
