@@ -25,8 +25,20 @@ namespace SocialNetwork
             groupAlbum.KeyDown += groupAlbum_KeyDown;
             groupAlbum.MouseEnter += groupAlbum_MouseEnter;
             groupAlbum.PreviewKeyDown += groupAlbum_PreviewKeyDown;
-        }
 
+            textNews.GotFocus += textNews_GotFocus;
+            textNews.LostFocus += textNews_LostFocus;
+        }
+        private void textNews_GotFocus(object sender, EventArgs args)
+        {
+            textNews.Text = "";
+            textNews.ForeColor = Color.Black;
+        }
+        private void textNews_LostFocus(object sender, EventArgs args)
+        {
+            textNews.Text = "Что у Вас нового?";
+            textNews.ForeColor = Color.DarkGray;
+        }
         private void displayPictures(string [] paths)
         {
             picturePref.Image = ControlNetworkPage.LoadPic(paths[0], picturePref.Size);
