@@ -96,7 +96,7 @@ namespace SocialNetwork
             {
                 try
                 {
-                    int ind = curAcc.Pictures.Count;
+                    curIndPicture = curAcc.Pictures.Count;
                     ControlNetworkPage.AddPictures(curAcc, loadPicDialog.FileNames);
                     string[] displayPic = ControlNetworkPage.DisplayPictures(ref curIndPicture, 0, curAcc);
                     displayPictures(displayPic);

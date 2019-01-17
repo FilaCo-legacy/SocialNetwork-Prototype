@@ -16,7 +16,6 @@ namespace SocialNetwork
         {
             InitializeComponent();
             addPerson = new AddPerson();
-            
         }
         
         private void toolExit_Click(object sender, EventArgs e)
