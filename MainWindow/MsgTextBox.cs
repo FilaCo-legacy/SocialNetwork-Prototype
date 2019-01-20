@@ -25,8 +25,8 @@ namespace SocialNetwork
         }
         public void ClearCache()
         {
-            cacheTxt = "";
             textMsg_LostFocus(this, null);
+            cacheTxt = "";
         }
         private void textMsg_GotFocus(object sender, EventArgs e)
         {
