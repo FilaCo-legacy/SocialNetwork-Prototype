@@ -168,7 +168,8 @@
             this.dataViewNews.Name = "dataViewNews";
             this.dataViewNews.ReadOnly = true;
             this.dataViewNews.RowHeadersVisible = false;
-            this.dataViewNews.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataViewNews.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataViewNews.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewNews.Size = new System.Drawing.Size(726, 256);
             this.dataViewNews.TabIndex = 3;
             // 
@@ -259,6 +260,7 @@
             this.dataViewPerson.ReadOnly = true;
             this.dataViewPerson.RowHeadersVisible = false;
             this.dataViewPerson.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataViewPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewPerson.Size = new System.Drawing.Size(241, 133);
             this.dataViewPerson.TabIndex = 0;
             this.dataViewPerson.TabStop = false;

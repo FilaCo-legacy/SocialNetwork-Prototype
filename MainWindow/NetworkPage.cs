@@ -36,6 +36,7 @@ namespace SocialNetwork
             ControlNetworkPage.UpdateNewsTable(ref dt, DateTime.Now, textNews.MsgText);
             dataViewNews.DataSource = dt;
             dataViewNews.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataViewNews.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataViewNews.Focus();
             textNews.ClearCache();
         }
