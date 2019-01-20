@@ -87,7 +87,7 @@ namespace SocialNetwork
             }
             return tab;
         }
-        public static void UpdateNewsTable(ref DataTable dt, DateTime dateAdding, string text)
+        public static void AddNews(ref DataTable dt, DateTime dateAdding, string text)
         {
             if (dt == null)
             {
@@ -98,7 +98,12 @@ namespace SocialNetwork
             }
             DataRow curNews = dt.NewRow();
             curNews.ItemArray = new object[] { dateAdding, text };
-            dt.Rows.Add(curNews);
+            dt.Rows.InsertAt(curNews,0);
+        }
+        public static void RemoveNews(TPerson curAcc, params string[] texts)
+        {
+            foreach (var cur in texts)
+                curAcc.RemoveNews(cur);
         }
         public static Bitmap LoadPic(string path, Size destSize)
         {

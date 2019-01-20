@@ -33,7 +33,7 @@ namespace SocialNetwork
         {
             Adapter.AddNews(curAcc, textNews.MsgText);
             DataTable dt = (DataTable)dataViewNews.DataSource;
-            ControlNetworkPage.UpdateNewsTable(ref dt, DateTime.Now, textNews.MsgText);
+            ControlNetworkPage.AddNews(ref dt, DateTime.Now, textNews.MsgText);
             dataViewNews.DataSource = dt;
             dataViewNews.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataViewNews.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -55,7 +55,6 @@ namespace SocialNetwork
         private void groupAlbum_MouseEnter(object sender, EventArgs args)
         {
            groupAlbum.Focus();
-            //groupAlbum.Select();
         }
         private void groupAlbum_MouseWheel(object sender, MouseEventArgs args)
         {
@@ -127,6 +126,10 @@ namespace SocialNetwork
             ControlNetworkPage.RemovePictures(curAcc, curIndPicture);
             string[] displayPic = ControlNetworkPage.DisplayPictures(ref curIndPicture, 0, curAcc);
             displayPictures(displayPic);
+        }
+        private void dataViewNews_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            ControlNetworkPage.RemoveNews(curAcc, (string)e.Row.Cells[1].Value);
         }
     }
 }
