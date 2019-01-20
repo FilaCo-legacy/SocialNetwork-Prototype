@@ -26,19 +26,19 @@ namespace SocialNetwork
             groupAlbum.MouseEnter += groupAlbum_MouseEnter;
             groupAlbum.PreviewKeyDown += groupAlbum_PreviewKeyDown;
 
-            textNews.GotFocus += textNews_GotFocus;
-            textNews.LostFocus += textNews_LostFocus;
+            textNews.butSend.Click += butSend_Click;
         }
-        private void textNews_GotFocus(object sender, EventArgs args)
+
+        public void butSend_Click(object sender, EventArgs e)
         {
-            textNews.Text = "";
-            textNews.ForeColor = Color.Black;
+            Adapter.AddNews(curAcc, textNews.MsgText);
+            DataTable dt = (DataTable)dataViewNews.DataSource;
+            ControlNetworkPage.UpdateNewsTable(ref dt, DateTime.Now, textNews.MsgText);
+            dataViewNews.DataSource = dt;
+            dataViewNews.Focus();
+            textNews.ClearCache();
         }
-        private void textNews_LostFocus(object sender, EventArgs args)
-        {
-            textNews.Text = "Что у Вас нового?";
-            textNews.ForeColor = Color.DarkGray;
-        }
+
         private void displayPictures(string [] paths)
         {
             picturePref.Image = ControlNetworkPage.LoadPic(paths[0], picturePref.Size);

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPage = new System.Windows.Forms.TableLayoutPanel();
             this.panelNews_Updates = new System.Windows.Forms.Panel();
+            this.textNews = new SocialNetwork.MsgTextBox();
             this.groupUpdates = new System.Windows.Forms.GroupBox();
-            this.textNews = new System.Windows.Forms.TextBox();
             this.groupNews = new System.Windows.Forms.GroupBox();
             this.dataViewNews = new System.Windows.Forms.DataGridView();
             this.panelInfo_Album = new System.Windows.Forms.Panel();
@@ -95,17 +95,34 @@
             // 
             // panelNews_Updates
             // 
+            this.panelNews_Updates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelNews_Updates.AutoSize = true;
             this.panelNews_Updates.BackColor = System.Drawing.Color.Transparent;
-            this.panelNews_Updates.Controls.Add(this.groupUpdates);
             this.panelNews_Updates.Controls.Add(this.textNews);
+            this.panelNews_Updates.Controls.Add(this.groupUpdates);
             this.panelNews_Updates.Controls.Add(this.groupNews);
-            this.panelNews_Updates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelNews_Updates.Location = new System.Drawing.Point(230, 280);
             this.panelNews_Updates.Margin = new System.Windows.Forms.Padding(0);
             this.panelNews_Updates.Name = "panelNews_Updates";
             this.panelNews_Updates.Padding = new System.Windows.Forms.Padding(10, 10, 20, 20);
             this.panelNews_Updates.Size = new System.Drawing.Size(1026, 351);
             this.panelNews_Updates.TabIndex = 1;
+            // 
+            // textNews
+            // 
+            this.textNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textNews.BackColor = System.Drawing.Color.AliceBlue;
+            this.textNews.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textNews.ForeColor = System.Drawing.Color.Black;
+            this.textNews.Location = new System.Drawing.Point(10, 10);
+            this.textNews.MaximumSize = new System.Drawing.Size(3000, 100);
+            this.textNews.MinimumSize = new System.Drawing.Size(150, 35);
+            this.textNews.Name = "textNews";
+            this.textNews.Size = new System.Drawing.Size(732, 35);
+            this.textNews.TabIndex = 23;
             // 
             // groupUpdates
             // 
@@ -120,23 +137,6 @@
             this.groupUpdates.TabIndex = 22;
             this.groupUpdates.TabStop = false;
             this.groupUpdates.Text = "Уведомления";
-            // 
-            // textNews
-            // 
-            this.textNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textNews.BackColor = System.Drawing.Color.AliceBlue;
-            this.textNews.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textNews.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textNews.ForeColor = System.Drawing.Color.DarkGray;
-            this.textNews.Location = new System.Drawing.Point(10, 10);
-            this.textNews.Margin = new System.Windows.Forms.Padding(0);
-            this.textNews.Multiline = true;
-            this.textNews.Name = "textNews";
-            this.textNews.Size = new System.Drawing.Size(732, 25);
-            this.textNews.TabIndex = 2;
-            this.textNews.TabStop = false;
-            this.textNews.Text = "Что у Вас нового?";
             // 
             // groupNews
             // 
@@ -168,14 +168,14 @@
             this.dataViewNews.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataViewNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewNews.ColumnHeadersVisible = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewNews.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataViewNews.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataViewNews.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewNews.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewNews.EnableHeadersVisualStyles = false;
@@ -258,14 +258,14 @@
             this.dataViewPerson.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataViewPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewPerson.ColumnHeadersVisible = false;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataViewPerson.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataViewPerson.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataViewPerson.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewPerson.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewPerson.EnableHeadersVisualStyles = false;
@@ -469,8 +469,8 @@
             this.Name = "NetworkPage";
             this.Size = new System.Drawing.Size(1256, 631);
             this.tableLayoutPage.ResumeLayout(false);
+            this.tableLayoutPage.PerformLayout();
             this.panelNews_Updates.ResumeLayout(false);
-            this.panelNews_Updates.PerformLayout();
             this.groupNews.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataViewNews)).EndInit();
             this.panelInfo_Album.ResumeLayout(false);
@@ -505,7 +505,6 @@
         private System.Windows.Forms.GroupBox dataGroup;
         private System.Windows.Forms.DataGridView dataViewPerson;
         private System.Windows.Forms.Button butAddPic;
-        private System.Windows.Forms.TextBox textNews;
         private System.Windows.Forms.GroupBox groupAlbum;
         private System.Windows.Forms.PictureBox pictureProfile;
         private System.Windows.Forms.Panel panelProfilePic;
@@ -518,5 +517,6 @@
         private System.Windows.Forms.Panel panelFriends_Table;
         private System.Windows.Forms.Button butDelPic;
         private System.Windows.Forms.OpenFileDialog loadPicDialog;
+        private MsgTextBox textNews;
     }
 }

@@ -87,6 +87,19 @@ namespace SocialNetwork
             }
             return tab;
         }
+        public static void UpdateNewsTable(ref DataTable dt, DateTime dateAdding, string text)
+        {
+            if (dt == null)
+            {
+                dt = new DataTable();
+                DataColumn date = new DataColumn("Дата", typeof(DateTime));
+                DataColumn txtNews = new DataColumn("Текст сообщения", typeof(string));
+                dt.Columns.AddRange(new DataColumn[] { date, txtNews });
+            }
+            DataRow curNews = dt.NewRow();
+            curNews.ItemArray = new object[] { dateAdding, text };
+            dt.Rows.Add(curNews);
+        }
         public static Bitmap LoadPic(string path, Size destSize)
         {
             Bitmap bmp = null;

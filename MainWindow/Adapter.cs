@@ -20,5 +20,9 @@ namespace SocialNetwork
         {
             accounts.Add(nAccount);
         }
+        public static void AddNews(TPerson acc, string txt)
+        {
+            acc.AddNews(txt);
+        }
     }
 }
