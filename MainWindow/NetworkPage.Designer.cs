@@ -151,7 +151,7 @@
             this.dataViewNews.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataViewNews.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataViewNews.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataViewNews.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataViewNews.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -181,6 +181,7 @@
             this.dataViewNews.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewNews.Size = new System.Drawing.Size(726, 256);
             this.dataViewNews.TabIndex = 3;
+            this.dataViewNews.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataViewNews_UserDeletedRow);
             this.dataViewNews.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataViewNews_UserDeletingRow);
             // 
             // panelInfo_Album

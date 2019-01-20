@@ -35,8 +35,9 @@ namespace SocialNetwork
             DataTable dt = (DataTable)dataViewNews.DataSource;
             ControlNetworkPage.AddNews(ref dt, DateTime.Now, textNews.MsgText);
             dataViewNews.DataSource = dt;
-            dataViewNews.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataViewNews.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             dataViewNews.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataViewNews.ColumnHeadersVisible = true;
             dataViewNews.Focus();
             textNews.ClearCache();
         }
@@ -130,6 +131,12 @@ namespace SocialNetwork
         private void dataViewNews_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             ControlNetworkPage.RemoveNews(curAcc, (string)e.Row.Cells[1].Value);
+        }
+
+        private void dataViewNews_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            if (dataViewNews.Rows.Count==0)
+                dataViewNews.ColumnHeadersVisible = false;
         }
     }
 }
