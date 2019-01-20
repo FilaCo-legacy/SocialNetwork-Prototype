@@ -35,6 +35,7 @@ namespace SocialNetwork
             DataTable dt = (DataTable)dataViewNews.DataSource;
             ControlNetworkPage.UpdateNewsTable(ref dt, DateTime.Now, textNews.MsgText);
             dataViewNews.DataSource = dt;
+            dataViewNews.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataViewNews.Focus();
             textNews.ClearCache();
         }
