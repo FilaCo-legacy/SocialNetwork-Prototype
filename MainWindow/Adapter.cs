@@ -36,5 +36,10 @@ namespace SocialNetwork
             TPerson nFriend = accounts.Find(x => x.FullName == fullNameFriend);
             sender.AddFriend(nFriend);
         }
+        public static void RemoveFriend(TPerson sender, string fullNameFriend)
+        {
+            TPerson nFriend = accounts.Find(x => x.FullName == fullNameFriend);
+            sender.RemoveFriend(nFriend);
+        }
     }
 }

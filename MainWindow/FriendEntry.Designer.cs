@@ -75,6 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.labelMidName);
             this.Controls.Add(this.labelFirstName);
@@ -83,9 +84,10 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimumSize = new System.Drawing.Size(180, 84);
             this.Name = "FriendEntry";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(180, 84);
+            this.Size = new System.Drawing.Size(180, 87);
             ((System.ComponentModel.ISupportInitialize)(this.picProfileUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

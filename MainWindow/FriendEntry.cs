@@ -26,10 +26,6 @@ namespace SocialNetwork
             else
                 picProfileUser.Image = GetRoundedPic(new Bitmap(Properties.Resources.EmptyProfilePic, picProfileUser.Size));
             GotFocus += FriendEntry_GotFocus;
-            picProfileUser.GotFocus += FriendEntry_GotFocus;
-            labelFirstName.GotFocus += FriendEntry_GotFocus;
-            labelMidName.GotFocus += FriendEntry_GotFocus;
-            labelLastName.GotFocus += FriendEntry_GotFocus;
             LostFocus += FriendEntry_LostFocus;
         }
 

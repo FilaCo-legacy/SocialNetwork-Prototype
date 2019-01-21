@@ -28,8 +28,7 @@ namespace SocialNetwork
             groupAlbum.PreviewKeyDown += groupAlbum_PreviewKeyDown;
 
             textNews.butSend.Click += butSend_Click;
-            
-            
+
         }
 
         public void butSend_Click(object sender, EventArgs e)
@@ -155,8 +154,19 @@ namespace SocialNetwork
                 panelFriends.Controls.Clear();
                 foreach (var curFriend in tmp)
                 {
+                    curFriend.KeyDown += CurFriend_KeyDown;
                     panelFriends.Controls.Add(curFriend);
                 }
+            }
+        }
+
+        private void CurFriend_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                FriendEntry tmp = (FriendEntry)sender;
+                Adapter.RemoveFriend(curAcc, tmp.GetUserName);
+                panelFriends.Controls.Remove(tmp);
             }
         }
 
