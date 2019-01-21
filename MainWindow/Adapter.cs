@@ -35,6 +35,7 @@ namespace SocialNetwork
         {
             TPerson nFriend = accounts.Find(x => x.FullName == fullNameFriend);
             sender.AddFriend(nFriend);
+            sender.SignOnUpdates(nFriend);
         }
         public static void RemoveFriend(TPerson sender, string fullNameFriend)
         {

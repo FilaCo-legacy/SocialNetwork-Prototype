@@ -19,6 +19,7 @@ namespace SocialNetwork
         public EditPerson()
         {
             InitializeComponent();
+            chooseDateOfBirth.MaxDate = DateTime.Now;
         }
         public void EditAcc(ref TPerson curData)
         {

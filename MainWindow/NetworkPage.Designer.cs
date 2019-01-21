@@ -57,8 +57,10 @@
             this.butAddFriend = new System.Windows.Forms.Button();
             this.panelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.loadPicDialog = new System.Windows.Forms.OpenFileDialog();
+            this.textUpdates = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPage.SuspendLayout();
             this.panelNews_Updates.SuspendLayout();
+            this.groupUpdates.SuspendLayout();
             this.groupNews.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewNews)).BeginInit();
             this.panelInfo_Album.SuspendLayout();
@@ -131,10 +133,12 @@
             this.groupUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupUpdates.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupUpdates.Controls.Add(this.textUpdates);
             this.groupUpdates.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupUpdates.Location = new System.Drawing.Point(762, 10);
             this.groupUpdates.Margin = new System.Windows.Forms.Padding(0);
             this.groupUpdates.Name = "groupUpdates";
+            this.groupUpdates.Padding = new System.Windows.Forms.Padding(10);
             this.groupUpdates.Size = new System.Drawing.Size(244, 321);
             this.groupUpdates.TabIndex = 22;
             this.groupUpdates.TabStop = false;
@@ -483,6 +487,19 @@
             this.loadPicDialog.Filter = "Изображения | *.bmp; *.jpg; *.jpeg; *.png";
             this.loadPicDialog.Multiselect = true;
             // 
+            // textUpdates
+            // 
+            this.textUpdates.BackColor = System.Drawing.Color.AliceBlue;
+            this.textUpdates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textUpdates.Location = new System.Drawing.Point(10, 24);
+            this.textUpdates.Name = "textUpdates";
+            this.textUpdates.ReadOnly = true;
+            this.textUpdates.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.textUpdates.Size = new System.Drawing.Size(224, 287);
+            this.textUpdates.TabIndex = 0;
+            this.textUpdates.TabStop = false;
+            this.textUpdates.Text = "";
+            // 
             // NetworkPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,6 +515,7 @@
             this.tableLayoutPage.ResumeLayout(false);
             this.tableLayoutPage.PerformLayout();
             this.panelNews_Updates.ResumeLayout(false);
+            this.groupUpdates.ResumeLayout(false);
             this.groupNews.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataViewNews)).EndInit();
             this.panelInfo_Album.ResumeLayout(false);
@@ -547,5 +565,6 @@
         private MsgTextBox textNews;
         private System.Windows.Forms.Button butAddFriend;
         private AddFriendDialog addPersonDialog;
+        private System.Windows.Forms.RichTextBox textUpdates;
     }
 }

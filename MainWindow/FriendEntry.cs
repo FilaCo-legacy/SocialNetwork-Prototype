@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
@@ -57,7 +58,12 @@ namespace SocialNetwork
         private Bitmap GetRoundedPic(string path)
         {
             Bitmap bmp = new Bitmap(picProfileUser.Width, picProfileUser.Height);
-            Bitmap sourceImg = new Bitmap(Image.FromFile(path), bmp.Size);
+            Bitmap sourceImg = null;
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                sourceImg = new Bitmap(fs);
+                sourceImg = new Bitmap(sourceImg, picProfileUser.Size);
+            }            
             int Radius = bmp.Width;
             using (Graphics g = Graphics.FromImage(bmp))
             {

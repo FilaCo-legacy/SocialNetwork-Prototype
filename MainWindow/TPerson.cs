@@ -19,8 +19,8 @@ namespace SocialNetwork
         private TStatus maritalStatus;
         private string school;
         private string highSchool;
-        public event PersonHandler PersonCharacteristicsChanged;
-        public event PersonHandler PersonActionMade;
+        public event PersonHandler PersonChanged;
+        internal TJournal GetLog { get { return updates; } }
         public SortedSet<TPerson> Friends;
         public List<string> News;
         public List<string> Pictures;
@@ -32,7 +32,7 @@ namespace SocialNetwork
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.FULLNAME_CHANGED, DateTime.Now,
                     $"Имя изменено на {value}");
                 fullName = value;
-                OnPersonCharacteristicsChanged(this, _args);
+                OnPersonChanged(this, _args);
             }
         }
         public DateTime DateOfBirth
@@ -40,10 +40,13 @@ namespace SocialNetwork
             get { return dateOfBirth; }
             set
             {
-                PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.DATEOFBIRTH_CHANGED, DateTime.Now,
-                    $"Дата рождения изменена на {value}");
-                dateOfBirth = value;
-                OnPersonCharacteristicsChanged(this, _args);
+                if (dateOfBirth != value)
+                {
+                    PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.DATEOFBIRTH_CHANGED, DateTime.Now,
+                        $"Дата рождения изменена на {value}");
+                    dateOfBirth = value;
+                    OnPersonChanged(this, _args);
+                }              
             }
         }
         public TGender Gender
@@ -54,7 +57,7 @@ namespace SocialNetwork
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.GENDER_CHANGED, DateTime.Now,
                     $"Пол изменен на {value}");
                 gender = value;
-                OnPersonCharacteristicsChanged(this, _args);
+                OnPersonChanged(this, _args);
             }
         }
         public TStatus MaritalStatus
@@ -65,7 +68,7 @@ namespace SocialNetwork
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.STATUS_CHANGED, DateTime.Now,
                     $"Семейное положение изменено на {value}");
                 maritalStatus = value;
-                OnPersonCharacteristicsChanged(this, _args);
+                OnPersonChanged(this, _args);
             }
         }
         public string School
@@ -76,7 +79,7 @@ namespace SocialNetwork
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.SCHOOL_CHANGED, DateTime.Now,
                     $"Школа изменена на {value}");
                 school = value;
-                OnPersonCharacteristicsChanged(this, _args);
+                OnPersonChanged(this, _args);
             }
         }
         public string HighSchool
@@ -87,13 +90,22 @@ namespace SocialNetwork
                 PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.HIGHSCHOOL_CHANGED, DateTime.Now,
                     $"Вуз изменен на {value}");
                 highSchool = value;
-                OnPersonCharacteristicsChanged(this, _args);
+                OnPersonChanged(this, _args);
             }
         }
         public string ProfilePic
         {
             get { return Pictures[0]; }
-            set { Pictures[0] = value; }
+            set
+            {
+                if (Pictures[0] != value)
+                {
+                    PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.PROFILE_PIC_CHANGED, DateTime.Now,
+                           $"Изменена фотография профиля: {value}");
+                    Pictures[0] = value;
+                    OnPersonChanged(this, _args);
+                }
+            }
         }
         public TPerson(string _fullName, DateTime _dateOfBirth, TGender _gender, TStatus _maritalStatus, string _school, 
             string _highSchool)
@@ -109,6 +121,7 @@ namespace SocialNetwork
             News = new List<string>();
             Pictures = new List<string>();
             Pictures.Add("");
+
         }
         public void AddFriend(TPerson _person)
         {
@@ -117,7 +130,7 @@ namespace SocialNetwork
             PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.FRIEND_ADDED, DateTime.Now,
                     $"Добавлен новый друг {_person.FullName}");
             Friends.Add(_person);
-            OnPersonActionMade(this, _args);
+            OnPersonChanged(this, _args);
         }
         public void RemoveFriend(TPerson _person)
         {
@@ -126,14 +139,14 @@ namespace SocialNetwork
             PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.FRIEND_DELETED, DateTime.Now,
         $"Удалён друг {_person.FullName}");
             Friends.Remove(_person);
-            OnPersonActionMade(this, _args);
+            OnPersonChanged(this, _args);
         }
         public void AddNews(string txt)
         {
             PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.NEWS_ADDED, DateTime.Now,
                     $"Добавлена новая новость \"{txt}\"");
             News.Add(txt);
-            OnPersonActionMade(this, _args);
+            OnPersonChanged(this, _args);
         }
         public void RemoveNews(string txt)
         {
@@ -142,14 +155,14 @@ namespace SocialNetwork
             PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.NEWS_DELETED, DateTime.Now,
                     $"Удалена новость \"{txt}\"");
             News.Remove(txt);
-            OnPersonActionMade(this, _args);
+            OnPersonChanged(this, _args);
         }
         public void AddPicture(string fileName)
         {
             PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.PICTURE_ADDED, DateTime.Now,
         $"Добавлена новая картинка \"{fileName}\"");
             Pictures.Add(fileName);
-            OnPersonActionMade(this, _args);
+            OnPersonChanged(this, _args);
         }
         public void RemovePicture(string fileName)
         {
@@ -158,17 +171,16 @@ namespace SocialNetwork
             PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.PICTURE_DELETED, DateTime.Now,
        $"Удалена картинка \"{fileName}\"");
             Pictures.Remove(fileName);
-            OnPersonActionMade(this, _args);
+            OnPersonChanged(this, _args);
         }
-        public void OnPersonCharacteristicsChanged(object source, PersonHandlerEventArgs args)
+        public void OnPersonChanged(object source, PersonHandlerEventArgs args)
         {
-            PersonCharacteristicsChanged?.Invoke(source, args);
+            PersonChanged?.Invoke(source, args);
         }
-        public void OnPersonActionMade(object source, PersonHandlerEventArgs args)
+        internal void SignOnUpdates(TPerson person)
         {
-            PersonActionMade?.Invoke(source, args);
+            person.PersonChanged += updates.OnPersonChanged;
         }
-
         public int CompareTo(TPerson other)
         {
             return fullName.CompareTo(other.FullName);

@@ -29,8 +29,27 @@ namespace SocialNetwork
 
             textNews.butSend.Click += butSend_Click;
 
+            curAcc.GetLog.JournalChanged += UpdateJournal;
         }
-
+        private void UpdateFriendsList()
+        {
+            panelFriends.Controls.Clear();
+            foreach (var cur in curAcc.Friends)
+            {
+                var curFriendEntry = new FriendEntry(cur);
+                curFriendEntry.KeyDown += CurFriend_KeyDown;
+                panelFriends.Controls.Add(curFriendEntry);
+            }
+                
+        }
+        internal void UpdateJournal(object sender, TJournalEntry args)
+        {
+            if (args.MessageType == TMessage.PROFILE_PIC_CHANGED || args.MessageType == TMessage.FULLNAME_CHANGED)
+            {
+                UpdateFriendsList();
+            }
+            textUpdates.Text = sender.ToString();
+        }
         public void butSend_Click(object sender, EventArgs e)
         {
             Adapter.AddNews(curAcc, textNews.MsgText);
@@ -149,14 +168,7 @@ namespace SocialNetwork
             else if (addPersonDialog.ShowDialog(curAcc, Adapter.GetPeople) == DialogResult.OK)
             {
                 Adapter.AddFriend(curAcc, addPersonDialog.GetChoice);
-                panelFriends.Controls.Add(new FriendEntry(Adapter.GetPeople.Find(x => x.FullName == addPersonDialog.GetChoice)));
-                var tmp = panelFriends.Controls.Cast<FriendEntry>().OrderBy(x => x.GetUserName).ToArray();
-                panelFriends.Controls.Clear();
-                foreach (var curFriend in tmp)
-                {
-                    curFriend.KeyDown += CurFriend_KeyDown;
-                    panelFriends.Controls.Add(curFriend);
-                }
+                UpdateFriendsList();
             }
         }
 

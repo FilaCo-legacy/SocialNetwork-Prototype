@@ -20,7 +20,7 @@ namespace SocialNetwork
         
         private void toolExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void toolAddPerson_Click(object sender, EventArgs e)
@@ -33,7 +33,10 @@ namespace SocialNetwork
                 NetworkPage np = new NetworkPage(nAccount);
                 np.Dock = DockStyle.Fill;
                 tabsNetwork.TabPages[tabsNetwork.TabPages.Count - 1].Controls.Add(np);
+                tabsNetwork.SelectedTab = tabsNetwork.TabPages[tabsNetwork.TabPages.Count - 1];
             }
         }
+
+
     }
 }

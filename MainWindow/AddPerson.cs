@@ -19,6 +19,7 @@ namespace SocialNetwork
         public AddPerson()
         {
             InitializeComponent();
+            chooseDateOfBirth.MaxDate = DateTime.Now;
             MakeEmpty();
         }
         public TPerson GetInfoNewAcc()
