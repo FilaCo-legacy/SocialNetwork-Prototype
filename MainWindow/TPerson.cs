@@ -10,7 +10,7 @@ namespace SocialNetwork
     public enum TGender { MAN, WOMAN }
     public enum TStatus { NOT_CHOSEN, NOT_MARRIED, IN_RELATIONSHIP, ENGAGED, MARRIED, IN_LOVE, COMPLICATED, IN_ACTIVE_SEARCH }
     public delegate void PersonHandler(object source, PersonHandlerEventArgs args);
-    public class TPerson
+    public class TPerson : IComparable<TPerson>
     {
         private TJournal updates;
         private string fullName;
@@ -167,6 +167,11 @@ namespace SocialNetwork
         public void OnPersonActionMade(object source, PersonHandlerEventArgs args)
         {
             PersonActionMade?.Invoke(source, args);
+        }
+
+        public int CompareTo(TPerson other)
+        {
+            return fullName.CompareTo(other.FullName);
         }
     }
 }

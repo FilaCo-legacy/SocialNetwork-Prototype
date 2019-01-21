@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPage = new System.Windows.Forms.TableLayoutPanel();
             this.panelNews_Updates = new System.Windows.Forms.Panel();
-            this.textNews = new SocialNetwork.MsgTextBox();
             this.groupUpdates = new System.Windows.Forms.GroupBox();
             this.groupNews = new System.Windows.Forms.GroupBox();
             this.dataViewNews = new System.Windows.Forms.DataGridView();
@@ -54,8 +53,10 @@
             this.pictureProfile = new System.Windows.Forms.PictureBox();
             this.panelFriends_Table = new System.Windows.Forms.Panel();
             this.groupFriends = new System.Windows.Forms.GroupBox();
+            this.butAddFriend = new System.Windows.Forms.Button();
             this.panelFriends = new System.Windows.Forms.FlowLayoutPanel();
             this.loadPicDialog = new System.Windows.Forms.OpenFileDialog();
+            this.textNews = new SocialNetwork.MsgTextBox();
             this.tableLayoutPage.SuspendLayout();
             this.panelNews_Updates.SuspendLayout();
             this.groupNews.SuspendLayout();
@@ -110,20 +111,6 @@
             this.panelNews_Updates.Padding = new System.Windows.Forms.Padding(10, 10, 20, 20);
             this.panelNews_Updates.Size = new System.Drawing.Size(1026, 351);
             this.panelNews_Updates.TabIndex = 1;
-            // 
-            // textNews
-            // 
-            this.textNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textNews.BackColor = System.Drawing.Color.AliceBlue;
-            this.textNews.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textNews.ForeColor = System.Drawing.Color.Black;
-            this.textNews.Location = new System.Drawing.Point(10, 10);
-            this.textNews.MaximumSize = new System.Drawing.Size(3000, 100);
-            this.textNews.MinimumSize = new System.Drawing.Size(150, 35);
-            this.textNews.Name = "textNews";
-            this.textNews.Size = new System.Drawing.Size(732, 35);
-            this.textNews.TabIndex = 23;
             // 
             // groupUpdates
             // 
@@ -440,6 +427,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupFriends.BackColor = System.Drawing.Color.AliceBlue;
+            this.groupFriends.Controls.Add(this.butAddFriend);
             this.groupFriends.Controls.Add(this.panelFriends);
             this.groupFriends.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupFriends.Location = new System.Drawing.Point(20, 10);
@@ -451,21 +439,50 @@
             this.groupFriends.TabStop = false;
             this.groupFriends.Text = "Друзья";
             // 
+            // butAddFriend
+            // 
+            this.butAddFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.butAddFriend.Location = new System.Drawing.Point(10, 27);
+            this.butAddFriend.Name = "butAddFriend";
+            this.butAddFriend.Size = new System.Drawing.Size(180, 23);
+            this.butAddFriend.TabIndex = 7;
+            this.butAddFriend.Text = "Добавить друга";
+            this.butAddFriend.UseVisualStyleBackColor = true;
+            this.butAddFriend.Click += new System.EventHandler(this.butAddFriend_Click);
+            // 
             // panelFriends
             // 
             this.panelFriends.AutoScroll = true;
             this.panelFriends.BackColor = System.Drawing.Color.AliceBlue;
-            this.panelFriends.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFriends.Location = new System.Drawing.Point(10, 24);
+            this.panelFriends.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panelFriends.Location = new System.Drawing.Point(10, 60);
             this.panelFriends.Margin = new System.Windows.Forms.Padding(0);
             this.panelFriends.Name = "panelFriends";
-            this.panelFriends.Size = new System.Drawing.Size(180, 287);
+            this.panelFriends.Size = new System.Drawing.Size(180, 249);
             this.panelFriends.TabIndex = 6;
+            this.panelFriends.TabStop = true;
+            this.panelFriends.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelFriends_ControlAdded);
             // 
             // loadPicDialog
             // 
             this.loadPicDialog.Filter = "Изображения | *.bmp; *.jpg; *.jpeg; *.png";
             this.loadPicDialog.Multiselect = true;
+            // 
+            // textNews
+            // 
+            this.textNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textNews.BackColor = System.Drawing.Color.AliceBlue;
+            this.textNews.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textNews.ForeColor = System.Drawing.Color.Black;
+            this.textNews.Location = new System.Drawing.Point(10, 10);
+            this.textNews.MaximumSize = new System.Drawing.Size(3000, 100);
+            this.textNews.MinimumSize = new System.Drawing.Size(150, 35);
+            this.textNews.Name = "textNews";
+            this.textNews.Size = new System.Drawing.Size(732, 35);
+            this.textNews.TabIndex = 23;
             // 
             // NetworkPage
             // 
@@ -529,5 +546,7 @@
         private System.Windows.Forms.Button butDelPic;
         private System.Windows.Forms.OpenFileDialog loadPicDialog;
         private MsgTextBox textNews;
+        private System.Windows.Forms.Button butAddFriend;
+        private AddFriendDialog addPersonDialog;
     }
 }

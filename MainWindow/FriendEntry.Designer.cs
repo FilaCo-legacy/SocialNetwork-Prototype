@@ -37,7 +37,6 @@
             // 
             // picProfileUser
             // 
-            this.picProfileUser.BackgroundImage = global::SocialNetwork.Properties.Resources.EmptyProfilePic;
             this.picProfileUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picProfileUser.Location = new System.Drawing.Point(10, 10);
             this.picProfileUser.Name = "picProfileUser";
@@ -86,7 +85,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "FriendEntry";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(189, 84);
+            this.Size = new System.Drawing.Size(180, 84);
             ((System.ComponentModel.ISupportInitialize)(this.picProfileUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

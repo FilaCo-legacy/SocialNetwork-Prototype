@@ -18,6 +18,7 @@ namespace SocialNetwork
         {
             InitializeComponent();
             editPerson = new EditPerson();
+            addPersonDialog = new AddFriendDialog();
             curAcc = _curAcc;
             FillInfo();
            
@@ -27,6 +28,8 @@ namespace SocialNetwork
             groupAlbum.PreviewKeyDown += groupAlbum_PreviewKeyDown;
 
             textNews.butSend.Click += butSend_Click;
+            
+            
         }
 
         public void butSend_Click(object sender, EventArgs e)
@@ -137,6 +140,29 @@ namespace SocialNetwork
         {
             if (dataViewNews.Rows.Count==0)
                 dataViewNews.ColumnHeadersVisible = false;
+        }
+
+        private void butAddFriend_Click(object sender, EventArgs e)
+        {
+            if (!Adapter.IsPossibleToAddSomeone(curAcc))
+                MessageBox.Show("Некого добавлять в друзья - добавьте ещё пользователей в соцсеть", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if (addPersonDialog.ShowDialog(curAcc, Adapter.GetPeople) == DialogResult.OK)
+            {
+                Adapter.AddFriend(curAcc, addPersonDialog.GetChoice);
+                panelFriends.Controls.Add(new FriendEntry(Adapter.GetPeople.Find(x => x.FullName == addPersonDialog.GetChoice)));
+                var tmp = panelFriends.Controls.Cast<FriendEntry>().OrderBy(x => x.GetUserName).ToArray();
+                panelFriends.Controls.Clear();
+                foreach (var curFriend in tmp)
+                {
+                    panelFriends.Controls.Add(curFriend);
+                }
+            }
+        }
+
+        private void panelFriends_ControlAdded(object sender, ControlEventArgs e)
+        {
+           
         }
     }
 }
