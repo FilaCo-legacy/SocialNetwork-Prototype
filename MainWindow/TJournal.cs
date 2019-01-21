@@ -13,8 +13,11 @@ namespace SocialNetwork
         public event JournalHandler JournalChanged;
         public void AddMessage(TJournalEntry msg)
         {
-            messages.Add(msg);
-            OnJournalChanged(this, msg);
+            if (!messages.Contains(msg))
+            {
+                messages.Add(msg);
+                OnJournalChanged(this, msg);
+            }
         }
         public TJournal()
         {

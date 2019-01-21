@@ -46,6 +46,12 @@ namespace SocialNetwork
                         $"Дата рождения изменена на {value}");
                     dateOfBirth = value;
                     OnPersonChanged(this, _args);
+                    if (DateTime.Now.Day == dateOfBirth.Day && DateTime.Now.Month == dateOfBirth.Month)
+                    {
+                        PersonHandlerEventArgs _argsBirthday = new PersonHandlerEventArgs(FullName, TMessage.BIRTHDAY, DateTime.Now,
+                        $"Сегодня отмечает день рождения!");
+                        OnPersonChanged(this, _argsBirthday);
+                    }
                 }              
             }
         }
@@ -121,7 +127,7 @@ namespace SocialNetwork
             News = new List<string>();
             Pictures = new List<string>();
             Pictures.Add("");
-
+            //PersonChanged += updates.OnPersonChanged;
         }
         public void AddFriend(TPerson _person)
         {
@@ -131,6 +137,12 @@ namespace SocialNetwork
                     $"Добавлен новый друг {_person.FullName}");
             Friends.Add(_person);
             OnPersonChanged(this, _args);
+            if (DateTime.Now.Day == _person.DateOfBirth.Day && DateTime.Now.Month == _person.DateOfBirth.Month)
+            {
+                PersonHandlerEventArgs _argsBirthday = new PersonHandlerEventArgs(_person.FullName, TMessage.BIRTHDAY, DateTime.Now,
+                $"Сегодня отмечает день рождения!");
+                _person.OnPersonChanged(_person, _argsBirthday);
+            }
         }
         public void RemoveFriend(TPerson _person)
         {
@@ -180,6 +192,10 @@ namespace SocialNetwork
         internal void SignOnUpdates(TPerson person)
         {
             person.PersonChanged += updates.OnPersonChanged;
+        }
+        internal void UnSignFromUpdates(TPerson person)
+        {
+            person.PersonChanged -= updates.OnPersonChanged;
         }
         public int CompareTo(TPerson other)
         {

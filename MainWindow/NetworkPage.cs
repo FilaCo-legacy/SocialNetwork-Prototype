@@ -44,7 +44,8 @@ namespace SocialNetwork
         }
         internal void UpdateJournal(object sender, TJournalEntry args)
         {
-            if (args.MessageType == TMessage.PROFILE_PIC_CHANGED || args.MessageType == TMessage.FULLNAME_CHANGED)
+            if (args.MessageType == TMessage.PROFILE_PIC_CHANGED || args.MessageType == TMessage.FULLNAME_CHANGED ||
+                args.MessageType == TMessage.FRIEND_DELETED || args.MessageType == TMessage.FRIEND_ADDED)
             {
                 UpdateFriendsList();
             }
@@ -178,7 +179,7 @@ namespace SocialNetwork
             {
                 FriendEntry tmp = (FriendEntry)sender;
                 Adapter.RemoveFriend(curAcc, tmp.GetUserName);
-                panelFriends.Controls.Remove(tmp);
+                UpdateFriendsList();
             }
         }
 

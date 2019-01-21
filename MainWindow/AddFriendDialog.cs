@@ -18,7 +18,7 @@ namespace SocialNetwork
             {
                 if (comboBoxPeople.Items.Count == 0)
                     throw new Exception("Непредвиденная ошибка: список возможных друзей был пуст");
-                return (string)comboBoxPeople.Items[0];
+                return (string)comboBoxPeople.Items[comboBoxPeople.SelectedIndex];
             }
         }
         public AddFriendDialog()

@@ -34,13 +34,23 @@ namespace SocialNetwork
         public static void AddFriend(TPerson sender, string fullNameFriend)
         {
             TPerson nFriend = accounts.Find(x => x.FullName == fullNameFriend);
-            sender.AddFriend(nFriend);
             sender.SignOnUpdates(nFriend);
+            nFriend.SignOnUpdates(sender);
+            nFriend.AddFriend(sender);            
+            sender.AddFriend(nFriend);          
+           
         }
         public static void RemoveFriend(TPerson sender, string fullNameFriend)
         {
             TPerson nFriend = accounts.Find(x => x.FullName == fullNameFriend);
+            nFriend.RemoveFriend(sender);
             sender.RemoveFriend(nFriend);
+            
+            
+            nFriend.UnSignFromUpdates(sender);
+            sender.UnSignFromUpdates(nFriend);
+            
+            
         }
     }
 }

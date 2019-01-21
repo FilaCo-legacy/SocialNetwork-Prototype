@@ -29,6 +29,8 @@ namespace SocialNetwork
                 string fullName = string.Format($"{textLastName.Text} {textFirstName.Text} " + $"{textMidName.Text}");
                 if (fullName != curData.FullName)
                     curData.FullName = fullName;
+                if (chooseDateOfBirth.Value != curData.DateOfBirth)
+                    curData.DateOfBirth = chooseDateOfBirth.Value;
                 TGender chosenGender = radioButMan.Checked ? TGender.MAN : TGender.WOMAN;
                 if (chosenGender != curData.Gender)
                     curData.Gender = chosenGender;

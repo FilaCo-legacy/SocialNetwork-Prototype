@@ -11,7 +11,7 @@ namespace SocialNetwork
         FULLNAME_CHANGED, DATEOFBIRTH_CHANGED, GENDER_CHANGED, STATUS_CHANGED, SCHOOL_CHANGED, HIGHSCHOOL_CHANGED,
         FRIEND_ADDED, NEWS_ADDED, PICTURE_ADDED, FRIEND_DELETED, NEWS_DELETED, PICTURE_DELETED, BIRTHDAY, PROFILE_PIC_CHANGED
     }
-    class TJournalEntry
+    class TJournalEntry 
     {
         public string Source { get; set; }
         public TMessage MessageType { get; set; }
@@ -28,6 +28,16 @@ namespace SocialNetwork
         {
             return string.Format($"Источник сообщения: {Source};\nКатегория сообщения: {MessageType};\nВремя: {TimeArrived}\n" +
                 $"Сведения о сообщении: {MessageInfo}");
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (MessageType != TMessage.BIRTHDAY)
+                return false;
+            TJournalEntry je = (TJournalEntry)obj;            
+            if (Source == je.Source && MessageType == je.MessageType && MessageInfo == je.MessageInfo)
+                return true;
+            return false;
         }
     }
 }

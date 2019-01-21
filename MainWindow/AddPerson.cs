@@ -42,7 +42,8 @@ namespace SocialNetwork
         private void MakeEmpty()
         {
             profilePicture.Image = null;
-            foreach(var cur in tableData.Controls)
+            choosePicDialog.FileName = "";
+            foreach (var cur in tableData.Controls)
             {
                 if (cur as TextBox != null)
                 {
