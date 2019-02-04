@@ -68,7 +68,7 @@
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(75, 23);
             this.buttonCreate.TabIndex = 9;
-            this.buttonCreate.Text = "Изменить";
+            this.buttonCreate.Text = "Применить";
             this.buttonCreate.UseVisualStyleBackColor = true;
             // 
             // buttonCancel

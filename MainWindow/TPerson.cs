@@ -43,7 +43,7 @@ namespace SocialNetwork
                 if (dateOfBirth != value)
                 {
                     PersonHandlerEventArgs _args = new PersonHandlerEventArgs(FullName, TMessage.DATEOFBIRTH_CHANGED, DateTime.Now,
-                        $"Дата рождения изменена на {value}");
+                        $"Дата рождения изменена на {value.ToLongDateString()}");
                     dateOfBirth = value;
                     OnPersonChanged(this, _args);
                     if (DateTime.Now.Day == dateOfBirth.Day && DateTime.Now.Month == dateOfBirth.Month)

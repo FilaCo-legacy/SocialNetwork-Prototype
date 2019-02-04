@@ -287,6 +287,7 @@
             this.panelGender.Name = "panelGender";
             this.panelGender.Size = new System.Drawing.Size(136, 14);
             this.panelGender.TabIndex = 4;
+            this.panelGender.TabStop = true;
             // 
             // radioButWoman
             // 

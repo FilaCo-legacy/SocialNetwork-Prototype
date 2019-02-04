@@ -14,12 +14,13 @@ namespace SocialNetwork
     {
         private TPerson curAcc;
         private int curIndPicture;
-        public NetworkPage(TPerson _curAcc)
+        public NetworkPage(TPerson curAcc, Control parentControl)
         {
             InitializeComponent();
+            Parent = parentControl;
             editPerson = new EditPerson();
             addPersonDialog = new AddFriendDialog();
-            curAcc = _curAcc;
+            this.curAcc = curAcc;
             FillInfo();
            
             groupAlbum.MouseWheel += groupAlbum_MouseWheel;
@@ -29,7 +30,7 @@ namespace SocialNetwork
 
             textNews.butSend.Click += butSend_Click;
 
-            curAcc.GetLog.JournalChanged += UpdateJournal;
+            this.curAcc.GetLog.JournalChanged += UpdateJournal;
         }
         private void UpdateFriendsList()
         {
@@ -115,7 +116,7 @@ namespace SocialNetwork
             {
                 MessageBox.Show(e.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            labelFullName.Text = curAcc.FullName;
+            Parent.Text = labelFullName.Text = curAcc.FullName;
             float sizeOfLetter = Math.Min(20f, (panelInfo.Width - (panelInfo.Padding.Left + panelInfo.Padding.Right))*1.1f/
                 labelFullName.Text.Length);
             labelFullName.Font = new Font(labelFullName.Font.Name, sizeOfLetter, FontStyle.Regular);

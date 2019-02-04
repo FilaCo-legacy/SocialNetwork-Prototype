@@ -30,7 +30,7 @@ namespace SocialNetwork
             {
                 Adapter.AddAccount(nAccount);
                 tabsNetwork.TabPages.Add(nAccount.FullName);
-                NetworkPage np = new NetworkPage(nAccount);
+                NetworkPage np = new NetworkPage(nAccount, tabsNetwork.TabPages[tabsNetwork.TabPages.Count - 1]);
                 np.Dock = DockStyle.Fill;
                 tabsNetwork.TabPages[tabsNetwork.TabPages.Count - 1].Controls.Add(np);
                 tabsNetwork.SelectedTab = tabsNetwork.TabPages[tabsNetwork.TabPages.Count - 1];
